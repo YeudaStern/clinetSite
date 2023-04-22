@@ -4,7 +4,7 @@ import New from "./pages/new/New";
 import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import LogIn from "./pages/logIn/LogIn";
-
+import "./index.css"
 
 
 

@@ -13,12 +13,12 @@ export default function BarSide() {
   return (
     <div className='sidebar'>
       <div className='top'>
-        <span className='logo'>M&Y logo</span>
+        <span className='logo ' >M&Y logo</span>
       </div>
       <hr />
       <div className='center'>
         <ul>
-          <p className='title'>MAIN</p>
+          <p className='title '>MAIN</p>
           <li><DashboardCustomizeRoundedIcon className='icon' />
             <span>Dashboard</span>
           </li>

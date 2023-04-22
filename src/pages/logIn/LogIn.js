@@ -43,7 +43,7 @@ export default function LogIn() {
     <div className='container'>
       <h2 className='text-center mt-3'>Login</h2>
       <form onSubmit={handleSubmit(onSubForm)} className="col-md-6 mx-auto" >
-        <label>email</label>
+        <label >email</label>
         <input {...register("email", { required: true, pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i})} className="form-control" type="email" />
         {errors.email && <div className="text-danger">* Enter valid email</div>}
         <label>password</label>
