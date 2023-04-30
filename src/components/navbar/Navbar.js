@@ -7,9 +7,13 @@ import { Link } from 'react-router-dom';
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
 import { pink } from '@mui/material/colors';
+import BurgerModal from './components/burgerModal';
+import { useWindowSize } from '../../services/hooks/screenSizeHook';
 
 
 export default function NavBar() {
+  const { width } = useWindowSize();
+
 
   function notificationsLabel(count) {
     if (count === 0) {
@@ -21,9 +25,11 @@ export default function NavBar() {
     return `${count} notifications`;
   }
 
+  let showBurgerElement = width <= 762;
 
     return (
       <>
+      {showBurgerElement && <BurgerModal/>}
         <div className='navbar border text-stone-600 hidden md:flex '>
           <div className='px-4 w-full flex justify-between '>
             <div className=''>
