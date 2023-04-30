@@ -59,9 +59,6 @@ export default function NavBar() {
                   <MailIcon />
                 </Badge>
               </IconButton>
-              <div className='item blo m-2 cursor-pointer '>
-                <ListOutlinedIcon className='icon' />
-              </div>
             </div>
           </div>
         </div>
