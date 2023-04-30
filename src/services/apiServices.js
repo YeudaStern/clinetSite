@@ -1,40 +1,76 @@
 import axios from "axios";
-export const API_URL = "http://localhost:3002";
+import { API_KEY } from "../constant/constants";
 
-export const KEY_TOKEN = "HB_token";
-
-
-export const doApiGet = async (_url) => {
+const apiGet = async (url, body) => {
     try {
-        const resp = await axios({
+        let { data } = await axios({
             method: "GET",
-            url: _url,
+            url,
+            data: body,
             headers: {
-                "x-api-key": localStorage[KEY_TOKEN]
-            }
+                apiKey: localStorage[API_KEY],
+            },
+
         })
-        return resp.data;
+        return data;
     }
     catch (err) {
         throw err;
     }
 }
 
-
-//post, put, delete, patch
-export const doApiMethod = async (_url, _method, _body = {}) => {
+const apiPost = async (url, body) => {
     try {
-        const resp = await axios({
-            method: _method,
-            url: _url,
-            data: _body,
+        let { data } = await axios({
+            method: "POST",
+            url,
+            data: body,
             headers: {
-                "x-api-key": localStorage[KEY_TOKEN]
-            }
+                "apiKey": localStorage[API_KEY],
+            },
+
         })
-        return resp.data;
+        return data;
     }
     catch (err) {
         throw err;
     }
 }
+
+
+const apiPut = async (url, body) => {
+    try {
+        let { data } = await axios({
+            method: "PUT",
+            url,
+            data: body,
+            headers: {
+                "apiKey": localStorage[API_KEY],
+            },
+
+        })
+        return data;
+    }
+    catch (err) {
+        throw err;
+    }
+}
+const apiDelete = async (url, body) => {
+    try {
+        let { data } = await axios({
+            method: "DELETE",
+            url,
+            data: body,
+            headers: {
+                "apiKey": localStorage[API_KEY],
+            },
+
+        })
+        return data;
+    }
+    catch (err) {
+        throw err;
+    }
+}
+
+export { apiGet, apiPost, apiDelete, apiPut}

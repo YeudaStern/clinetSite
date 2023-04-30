@@ -5,6 +5,7 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import BusinessOutlinedIcon from '@mui/icons-material/BusinessOutlined';
 import "./widget.scss"
 import { Link } from 'react-router-dom';
+
 export default function Widget({ type }) {
   let data;
 
@@ -15,7 +16,7 @@ export default function Widget({ type }) {
     case 'users':
       data = {
         title: "USERS",
-        link: <Link to="...">Users list</Link>,
+        link: <Link to='users'>Users list</Link>,
         icon:
           <PersonOutlineOutlinedIcon className='icon' style={{ color: "crimson", background: "rgba(220, 20, 60, 0.219)" }} />
       };
@@ -41,7 +42,11 @@ export default function Widget({ type }) {
 
   }
   return (
-    <div className='widget mr-[20px] flex w-[200px] flex-[1] p-[10px] justify-between rounded-lg h-28'>
+
+    <> 
+    <div className='widget mr-[20px] flex flex-[1] p-[10px] justify-between rounded-lg h-28 w-full md:1/3 mb-4'>
+
+     
       <div className='left flex flex-col justify-between'>
         <span className='title font-bold text-sm text-gray-400'>{data.title}</span>
         <span className='counter text-xl font-light'>{amount}</span>
@@ -57,5 +62,7 @@ export default function Widget({ type }) {
         </div>
       </div>
     </div>
+    </>
+    
   )
 }
