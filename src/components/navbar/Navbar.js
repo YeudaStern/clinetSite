@@ -1,7 +1,6 @@
 import * as React from 'react';
 import LanguageIcon from '@mui/icons-material/Language';
 import FullscreenExitOutlinedIcon from '@mui/icons-material/FullscreenExitOutlined';
-import ListOutlinedIcon from '@mui/icons-material/ListOutlined';
 import MailIcon from '@mui/icons-material/Mail';
 import { Link } from 'react-router-dom';
 import IconButton from '@mui/material/IconButton';
