@@ -3,17 +3,66 @@ import DashboardCustomizeRoundedIcon from '@mui/icons-material/DashboardCustomiz
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
-import NightlightRoundIcon from '@mui/icons-material/NightlightRound';
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import LogoutIcon from '@mui/icons-material/Logout';
-import { Brightness7Rounded, EngineeringRounded } from '@mui/icons-material';
+import { EngineeringRounded } from '@mui/icons-material';
+import { ThemeProvider, useTheme } from '@mui/private-theming';
+import { Box, createTheme } from '@mui/system';
+import { IconButton } from '@mui/material';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 
+const ColorModeContext = React.createContext({ toggleColorMode: () => { } });
 
+function MyApp() {
+  const theme = useTheme();
+  const colorMode = React.useContext(ColorModeContext);
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        bgcolor: 'background.default',
+        color: 'text.primary',
+        borderRadius: 1,
+        p: 3,
+      }}
+    >
+      {theme.palette.mode} mode
+      <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
+        {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+      </IconButton>
+    </Box>
+  );
+}
 
 export default function BarSide() {
+
+  const [mode, setMode] = React.useState('light');
+  const colorMode = React.useMemo(
+    () => ({
+      toggleColorMode: () => {
+        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+      },
+    }),
+    [],
+  );
+
+  const theme = React.useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode,
+        },
+      }),
+    [mode],
+  );
   return (
     <div className=' border-2 border-e-slate-950 min-h-screen w-56 hidden md:block text-neutral-800'>
       <div className=' justify-center flex mt-2 h-12'>
+
         <span><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH-OhVu04vi5MILVrHMKjFHz68ULPUqfuE-g&usqp=CAU' alt='person' className='avatar rounded-full w-10' /></span>
       </div>
       <hr />
@@ -45,10 +94,11 @@ export default function BarSide() {
           </li>
           <p className='title text-gray-400 mt-6'>DARK MODE</p>
         </ul>
-        <div className=' flex px-2.5 mx-4 mt-3 w-20 rounded-full border-1 drop-shadow-md border-stone-400  '>
-          <div className=' p-0.5 '> <Brightness7Rounded className=' cursor-pointer text-yellow-400' /></div>
-          <div className=' p-0.5'><NightlightRoundIcon className=' cursor-pointer ' />  </div>
-        </div>
+        <ColorModeContext.Provider value={colorMode}>
+          <ThemeProvider theme={theme}>
+            <MyApp />
+          </ThemeProvider>
+        </ColorModeContext.Provider>
       </div>
 
     </div>
