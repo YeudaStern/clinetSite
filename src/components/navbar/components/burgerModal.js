@@ -10,12 +10,12 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
-import { Apps, Brightness7Rounded, Clear, Dashboard, DashboardCustomize, EngineeringRounded, FormatListBulletedRounded, Login } from '@mui/icons-material';
-import ListOutlinedIcon from '@mui/icons-material/ListOutlined';
+
+import { Brightness7Rounded, Clear, EngineeringRounded, Login } from '@mui/icons-material';
+
 import { Link } from 'react-router-dom';
 import LanguageIcon from '@mui/icons-material/Language';
-import { Badge, IconButton, Menu } from '@mui/material';
+import { Badge, IconButton } from '@mui/material';
 import { pink } from '@mui/material/colors';
 import NightlightRoundIcon from '@mui/icons-material/NightlightRound';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
@@ -25,18 +25,65 @@ import DashboardCustomizeRoundedIcon from '@mui/icons-material/DashboardCustomiz
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import { styled, alpha } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import { ThemeProvider, useTheme } from '@mui/private-theming';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import { createTheme } from '@mui/system';
 
+const ColorModeContext = React.createContext({ toggleColorMode: () => { } });
 
+function MyApp() {
+  const theme = useTheme();
+  const colorMode = React.useContext(ColorModeContext);
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        bgcolor: 'background.default',
+        color: 'text.primary',
+        borderRadius: 1,
+        p: 3,
+      }}
+    >
+      {theme.palette.mode} mode
+      <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
+        {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+      </IconButton>
+    </Box>
+  );
+}
 
 
 
 export default function BurgerModal() {
+
+  const [mode, setMode] = React.useState('light');
+  const colorMode = React.useMemo(
+    () => ({
+      toggleColorMode: () => {
+        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+      },
+    }),
+    [],
+  );
+
+  const theme = React.useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode,
+        },
+      }),
+    [mode],
+  );
 
   const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -184,10 +231,12 @@ export default function BurgerModal() {
           </li>
           <p className='title text-gray-400 mt-6'>DARK MODE</p>
         </ul>
-        <div className=' flex px-2.5 mx-4 mt-3 w-20 rounded-full border-1 drop-shadow-md border-stone-400  '>
-          <div className=' p-0.5 '> <Brightness7Rounded className=' cursor-pointer text-yellow-400' /></div>
-          <div className=' p-0.5'><NightlightRoundIcon className=' cursor-pointer ' />  </div>
-        </div>
+        <ColorModeContext.Provider value={colorMode}>
+          <ThemeProvider theme={theme}>
+            <MyApp />
+          </ThemeProvider>
+        </ColorModeContext.Provider>
+
       </List>
     </Box>
   );

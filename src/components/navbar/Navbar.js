@@ -25,7 +25,7 @@ export default function NavBar() {
     return `${count} notifications`;
   }
 
-  let showBurgerElement = width <= 762;
+  let showBurgerElement = width <= 768;
 
     return (
       <>

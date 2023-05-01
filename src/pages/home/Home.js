@@ -22,7 +22,6 @@ export default function Home() {
           <Widget type='users' />
           <Widget type='projects' />
           <Widget type='contractors' />
-          {/* <Widget type='users'/> */}
         </div>
       </div>
     </div>

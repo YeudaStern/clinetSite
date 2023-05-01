@@ -42,27 +42,24 @@ export default function Widget({ type }) {
 
   }
   return (
-
-    <> 
-    <div className='widget mr-[20px] flex flex-[1] p-[10px] justify-between rounded-lg h-28 w-full md:1/3 mb-4'>
-
-     
-      <div className='left flex flex-col justify-between'>
-        <span className='title font-bold text-sm text-gray-400'>{data.title}</span>
-        <span className='counter text-xl font-light'>{amount}</span>
-        <span className='link text-xs border-b-[1px] border-b-[gray] w-max'>{data.link}</span>
-      </div>
-      <div className='right flex flex-col justify-between'>
-        <div className='percentage positive flex items-center text-sm'>
-          <KeyboardArrowUpIcon />
-          {diff} %
+    <>
+      <div className='widget mr-[20px] flex flex-[1] p-[10px] justify-between rounded-lg h-28 w-full md:1/3 mb-4'>
+        <div className='left flex flex-col justify-between'>
+          <span className='title font-bold text-sm text-gray-400'>{data.title}</span>
+          <span className='counter text-xl font-light'>{amount}</span>
+          <span className='link text-xs border-b-[1px] border-b-[gray] w-max'>{data.link}</span>
         </div>
-        <div className='self-end'>
-          {data.icon}
+        <div className='right flex flex-col justify-between'>
+          <div className='percentage positive flex items-center text-sm'>
+            <KeyboardArrowUpIcon />
+            {diff} %
+          </div>
+          <div className='self-end'>
+            {data.icon}
+          </div>
         </div>
       </div>
-    </div>
     </>
-    
+
   )
 }
