@@ -1,16 +1,11 @@
 import React from "react";
-import BarSide from "../../components/barside/BarSide";
-import NavBar from "../../components/navbar/NavBar";
+
 import Widget from "../../components/widget/Widget";
-
-
-
+import  List from "../list/List" ;
+import NavBar from "../../components/navbar/NavBar";
+import BarSide from "../../components/barside/BarSide";
 
 export default function Home() {
-
-
-
-
 
   return (
 
@@ -22,6 +17,10 @@ export default function Home() {
           <Widget type='users' />
           <Widget type='projects' />
           <Widget type='contractors' />
+        </div>
+        <div className="listContainer p-[20px] m-[20px]">
+          <div className="listTitle font-medium text-neutral-400 mb-3.5">Projects table</div>
+          <List type='projects' className='prolist'/>
         </div>
       </div>
     </div>

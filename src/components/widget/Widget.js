@@ -24,7 +24,7 @@ export default function Widget({ type }) {
     case 'projects':
       data = {
         title: "PROJECTS ",
-        link: <Link to="...">View all projects</Link>,
+        link: <Link to="projects">View all projects</Link>,
         icon:
           <BusinessOutlinedIcon className='icon' style={{ color: "goldenrod", background: "rgba(218, 165, 32, 0.284)" }} />
       };

@@ -6,11 +6,12 @@ import { Link } from 'react-router-dom';
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
 import { pink } from '@mui/material/colors';
-import BurgerModal from './components/burgerModal';
+import BurgerModal from "../burgers/burgerModal"
+
 import { useWindowSize } from '../../services/hooks/screenSizeHook';
 
 
-export default function Navbar() {
+export default function NavBar() {
   const { width } = useWindowSize();
 
 
