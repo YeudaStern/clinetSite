@@ -13,7 +13,7 @@ import { Brightness7Rounded, EngineeringRounded } from '@mui/icons-material';
 export default function BarSide() {
   return (
     <div className=' border-2 border-e-slate-950 min-h-screen w-56 hidden md:block text-neutral-800'>
-      <div className=' justify-center flex mt-1 h-12'>
+      <div className=' justify-center flex mt-2 h-12'>
         <span className='logo ' ><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH-OhVu04vi5MILVrHMKjFHz68ULPUqfuE-g&usqp=CAU' alt='person' className='avatar rounded-full w-10' /></span>
       </div>
       <hr />
