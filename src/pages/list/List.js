@@ -1,19 +1,93 @@
+
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+// import { makeStyles } from '@material-ui/core/styles';
+// import {
+//   TableContainer,
+//   Paper,
+//   Table,
+//   TableHead,
+//   TableRow,
+//   TableCell,
+//   TableBody,
+//   CircularProgress,
+// } from '@material-ui/core';
+// import { DataGrid } from '@mui/x-data-grid';
+
+// const useStyles = makeStyles((theme) => ({
+//   table: {
+//     minWidth: 650,
+//   },
+//   loading: {
+//     display: 'flex',
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     minHeight: 'calc(100vh - 150px)',
+//   },
+// }));
+
+// const columns = [
+//   { field: 'id', headerName: 'ID', width: 100 },
+//   { field: 'title', headerName: 'Title', width: 300 },
+//   { field: 'body', headerName: 'Body', width: 500 },
+// ];
+
+// const ResponsiveTable = () => {
+//   const classes = useStyles();
+//   const [loading, setLoading] = useState(true);
+//   const [rows, setRows] = useState([]);
+
+//   useEffect(() => {
+//     axios
+//       .get('http://localhost:3002/projects')
+//       .then((response) => {
+//         setRows(response.data);
+//         setLoading(false);
+//       });
+//   }, []);
+
+//   return (
+//     <div>
+//       {loading ? (
+//         <div className={classes.loading}>
+//           <CircularProgress />
+//         </div>
+//       ) : (
+//         <div style={{ height: 400, width: '100%' }}>
+//           <DataGrid rows={rows} columns={columns} pageSize={5} />
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default ResponsiveTable;
+
+
+
+
+
+
 import React, { useState, useEffect } from 'react';
 import { apiDelete, apiGet } from '../../services/apiServices'
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Table, Button } from "@mui/material";
+import { TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Table, Button, Box, Typography } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { toast } from 'react-toastify';
 import { MAIN_ROUTE } from '../../constant/url';
+import { DataGrid } from '@mui/x-data-grid';
+
 
 export default function List() {
-
+ 
+  
   const [data, setData] = useState([]);
   const [query] = useSearchParams();
   const nav = useNavigate();
-
+  
   useEffect(() => {
+   
     doApi();
   }, [query])
 
@@ -47,11 +121,15 @@ export default function List() {
     }
   }
 
+   const page = query.get("page") || 1;
 
-  const page = query.get("page") || 1;
-  return (
 
-    <TableContainer component={Paper} sx={{ maxHeight: "300px" }} className='drop-shadow-xl bg-slate-100'>
+
+   return (
+
+  
+
+    <TableContainer component={Paper} className='drop-shadow-xl bg-slate-100'>
       <Table className='table-fixed'>
         <TableHead>
           <TableRow align="center">
@@ -80,8 +158,8 @@ export default function List() {
                   deleteProject(row._id);
                 }} className='text-center me-10' size='small' color='error' variant="outlined" startIcon={<DeleteIcon />}>Delete</Button></TableCell>
               <TableCell><Button size='small' variant="outlined" startIcon={<EditIcon />}>Edit</Button></TableCell>
-                
-              
+
+             
             </TableRow>
           ))
           }
