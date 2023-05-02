@@ -88,7 +88,7 @@ export default function BurgerModal() {
     backgroundColor: alpha(theme.palette.common.black, 0.15),
     marginLeft: 4,
     marginRight: 5,
-    width: '70%',
+    width: '100%',
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(1),
       width: 'auto',
@@ -243,7 +243,7 @@ export default function BurgerModal() {
 
 
       <Box sx={{ flexGrow: 1 }}>
-        <div className='bg-gray-200' position="static">
+        <div className='bg-gray-200 ' position="static">
           <Toolbar>
             <div>
               {['left'].map((anchor) => (

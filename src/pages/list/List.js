@@ -6,6 +6,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { toast } from 'react-toastify';
 import { MAIN_ROUTE } from '../../constant/url';
+import Box from '@mui/material/Box';
 
 export default function List() {
 
@@ -47,11 +48,18 @@ export default function List() {
     }
   }
 
+  const datad = ()=>{
+    return data;
+  }
+
+  const rows = {
+    datad 
+  }
 
   const page = query.get("page") || 1;
   return (
-
-    <TableContainer component={Paper} sx={{ maxHeight: "300px" }} className='drop-shadow-xl bg-slate-100'>
+<Box sx={{width:"100%",  maxHeight: "300px"}}>
+    <TableContainer component={Paper} className='drop-shadow-xl bg-slate-100 '>
       <Table className='table-fixed'>
         <TableHead>
           <TableRow align="center">
@@ -88,5 +96,6 @@ export default function List() {
         </TableBody>
       </Table>
     </TableContainer>
+    </Box>
   )
 }
