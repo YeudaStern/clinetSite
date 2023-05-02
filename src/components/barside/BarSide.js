@@ -12,6 +12,7 @@ import { IconButton } from '@mui/material';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { Link } from 'react-router-dom';
+import LoginIcon from '@mui/icons-material/Login';
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => { } });
 
@@ -70,34 +71,55 @@ export default function BarSide() {
       <div className=' px-4 hidden md:block '>
         <ul className='px-2'>
           <p className='title text-gray-400 mt-6 '>MAIN</p>
-          <li className='px-3 mb-12 hover:bg-sky-200 rounded-full cursor-pointer'><DashboardCustomizeRoundedIcon className='icon bg-lime-500 rounded-full p-1' />
-            <span className='mt-1 mx-2'><Link to='/'>Dashboard</Link></span>
-          </li>
+          <Link to='/'  >
+            <li className='px-3 mb-12 cursor-pointer '>
+              <DashboardCustomizeRoundedIcon />
+              <span className='mt-1 mx-2' >Dashboard</span>
+            </li>
+          </Link>
           <p className='title text-gray-400 mt-6'>LIST</p>
-          <li className='px-3  hover:bg-sky-200 rounded-full cursor-pointer'><PeopleAltIcon className='icon  bg-pink-200 rounded-full p-1' />
-            <span className='mt-1 mx-2'>
-              <Link to='users'>Users</Link>
-            </span>
-          </li>
-          <li className='px-3 mt-3 hover:bg-sky-200 rounded-full cursor-pointer'><AccountTreeIcon className='icon  bg-orange-200 rounded-full p-1' />
-            <span className='mt-1 mx-2'>
-              <Link to='projects'>Projects</Link>
-            </span>
-          </li>
-          <li className='px-3 mb-12 mt-3 hover:bg-sky-200 rounded-full cursor-pointer'><EngineeringRounded className='icon  bg-green-200 rounded-full p-1' />
-            <span className='mt-1 mx-2'>Constructor</span>
-          </li>
+          <Link to='/users'>
+            <li className='px-3 cursor-pointer'>
+              <PeopleAltIcon />
+              <span className='mt-1 mx-2'>
+                Users
+              </span>
+            </li>
+          </Link>
+          <Link to='/projects'>
+            <li className='px-3 mt-3  cursor-pointer'><AccountTreeIcon />
+              <span className='mt-1 mx-2'>
+                Projects
+              </span>
+            </li>
+          </Link>
+          <Link to='...'>
+            <li className='px-3 mb-12 mt-3 cursor-pointer'><EngineeringRounded />
+              <span className='mt-1 mx-2'>Constructor</span>
+            </li>
+          </Link>
           <p className='title text-gray-400 mt-6'>SERVICE</p>
-          <li className='px-3 mt-3 hover:bg-sky-200 rounded-full cursor-pointer'><ConnectWithoutContactIcon className='icon bg-orange-200 rounded-full p-1' />
-            <span className='mt-1 mx-2'>Contact us</span>
-          </li>
-          <li className='px-3 mt-3 hover:bg-sky-200 rounded-full cursor-pointer'><AssignmentIndIcon className='icon bg-lime-200 rounded-full p-1' />
-            <span className='mt-1 mx-2'>Profile</span>
-          </li>
-          <li className='px-3 mb-12 mt-3 hover:bg-sky-200 rounded-full cursor-pointer'><LogoutIcon className='icon bg-cyan-200 rounded-full p-1' />
-            <span className='mt-1 mx-2 '>Logout</span>
-          </li>
-          <p className='title text-gray-400 mt-6'>DARK MODE</p>
+          <Link to='...'>
+            <li className='px-3 mt-3 cursor-pointer'><ConnectWithoutContactIcon />
+              <span className='mt-1 mx-2'>Contact us</span>
+            </li>
+          </Link>
+          <Link to='...'>
+            <li className='px-3 mt-3 cursor-pointer'><AssignmentIndIcon />
+              <span className='mt-1 mx-2'>Profile</span>
+            </li>
+          </Link>
+          <Link to='...'>
+            <li className='px-3 mt-3 cursor-pointer'><LogoutIcon />
+              <span className='mt-1 mx-2 '>Logout</span>
+            </li>
+          </Link>
+          <Link to='/login'>
+            <li className='px-3 mb-12 mt-3 cursor-pointer'> <LoginIcon />
+              <span className='mt-1 mx-2 '>Login</span>
+            </li>
+          </Link>
+          <p className='title text-gray-400 mt-6'>MODE</p>
         </ul>
         <ColorModeContext.Provider value={colorMode}>
           <ThemeProvider theme={theme}>

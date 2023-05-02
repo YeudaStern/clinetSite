@@ -1,30 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { apiDelete, apiGet } from '../../services/apiServices'
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Table, Button } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { toast } from 'react-toastify';
-import { MAIN_ROUTE } from '../../constant/url';
+import {  API_URL } from '../../constant/url';
 import BarSide from '../../components/barside/BarSide';
 import BarNav from '../../components/navbar/BarNav';
+
 
 export default function ProjectsList() {
 
   const [data, setData] = useState([]);
   const [query] = useSearchParams();
-  const nav = useNavigate();
+
 
   useEffect(() => {
     doApi();
   }, [query])
 
-
   const doApi = async () => {
-    const url = MAIN_ROUTE + 'projects/projectsList';
+    const url = API_URL + '/projects/projectsList';
     try {
       const data = await apiGet(url);
-      console.log(data);
+      // console.log(data);
       setData(data);
     } catch (error) {
       console.log(error);
@@ -35,7 +35,7 @@ export default function ProjectsList() {
   const deleteProject = async (_idDel) => {
     if (window.confirm("Delete project?")) {
       try {
-        const url = MAIN_ROUTE + "projects/" + _idDel;
+        const url = API_URL + "/projects/" + _idDel;
         const data = await apiDelete(url, "DELETE");
         if (data.deletedCount) {
           doApi();
@@ -48,6 +48,10 @@ export default function ProjectsList() {
       }
     }
   }
+  const arr = [data]
+  console.log('first data');
+  
+  console.log(arr);
 
 
   const page = query.get("page") || 1;
@@ -57,9 +61,14 @@ export default function ProjectsList() {
       <div className='flex-[10]'>
         <BarNav />
         <div className='p-[20px] m-[20px]'>
-          <div className='font-medium text-neutral-400 mb-3.5'>Projects Table</div>
+          <div className='font-medium text-neutral-400 mb-3.5 border-2 p-[8px] shadow flex justify-between'>
+            <div > Projects Table</div>
+            <div>
+           <Button size="small" variant="contained" className='items-end'><Link to='/projects/newProject'>Add new project</Link></Button>
+            </div>
+          </div>
           <TableContainer component={Paper} sx={{ maxHeight: "300px" }} className='drop-shadow-xl bg-slate-100'>
-            <Table className='table-fixed'>
+            <Table className=''>
               <TableHead>
                 <TableRow align="center">
                   <TableCell>Id</TableCell>
