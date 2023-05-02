@@ -12,7 +12,7 @@ import BurgerModal from "../burgers/burgerModal"
 import { useWindowSize } from '../../services/hooks/screenSizeHook';
 
 
-export default function NavBar() {
+export default function BarNav() {
   const { width } = useWindowSize();
 
 
