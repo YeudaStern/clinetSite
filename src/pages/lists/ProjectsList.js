@@ -64,12 +64,12 @@ export default function ProjectsList() {
           <div className='font-medium text-neutral-400 mb-3.5 border-2 p-[8px] shadow flex justify-between'>
             <div > Projects Table</div>
             <div>
-           <Button size="small" variant="contained" className='items-end'><Link to='/projects/newProject'>Add new project</Link></Button>
+           <Button size="small" variant="contained" className='items-end' ><Link to='/projects/newProject' className='hover:text-white'>Add new project</Link></Button>
             </div>
           </div>
           <TableContainer component={Paper} sx={{ maxHeight: "300px" }} className='drop-shadow-xl bg-slate-100'>
-            <Table className=''>
-              <TableHead>
+            <Table stickyHeader className=''>
+              <TableHead >
                 <TableRow align="center">
                   <TableCell>Id</TableCell>
                   <TableCell>Project Name</TableCell>
