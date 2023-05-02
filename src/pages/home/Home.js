@@ -23,6 +23,6 @@ export default function Home() {
           <List type='projects' className='prolist'/>
         </div>
       </div>
-    </div>
+    </div> 
   )
 }
