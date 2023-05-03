@@ -1,16 +1,12 @@
 
 
 import * as React from 'react';
-import LanguageIcon from '@mui/icons-material/Language';
 import FullscreenExitOutlinedIcon from '@mui/icons-material/FullscreenExitOutlined';
 import MailIcon from '@mui/icons-material/Mail';
-import { Link } from 'react-router-dom';
 // k
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
-import { pink } from '@mui/material/colors';
 import BurgerModal from "../burgers/burgerModal"
-
 import { useWindowSize } from '../../services/hooks/screenSizeHook';
 
 
@@ -41,14 +37,8 @@ export default function BarNav() {
                 <button className="btn btn-outline-primary" type="submit">Search</button>
               </div>
             </div>
-            <div className=' flex'>
-              <div className=' m-2'>
-                <Link to="login">LOG IN</Link>
-              </div>
-              <div className=' m-2 cursor-pointer'>
-                <LanguageIcon className='icon mx-1' />
-                English
-              </div>
+            <div className=' flex'>            
+              
               <div className='m-2 cursor-pointer'>
                 <FullscreenExitOutlinedIcon className='icon' />
               </div>
@@ -56,12 +46,7 @@ export default function BarNav() {
                 <Badge badgeContent={100} color="primary">
                   <MailIcon />
                 </Badge>
-              </IconButton>
-              <IconButton className='mx-2' aria-label={notificationsLabel(100)}>
-                <Badge badgeContent={100} sx={{ color: pink[500] }} >
-                  <MailIcon />
-                </Badge>
-              </IconButton>
+              </IconButton>            
             </div>
           </div>
         </div>

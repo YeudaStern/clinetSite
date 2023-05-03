@@ -75,7 +75,7 @@ import { TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Table
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { toast } from 'react-toastify';
-import { MAIN_ROUTE } from '../../constant/url';
+import { API_URL, MAIN_ROUTE } from '../../constant/url';
 import { DataGrid } from '@mui/x-data-grid';
 
 
@@ -93,7 +93,7 @@ export default function List() {
 
 
   const doApi = async () => {
-    const url = MAIN_ROUTE + 'projects/projectsList';
+    const url = API_URL + 'projects/projectsList';
     try {
       const data = await apiGet(url);
       console.log(data);
@@ -107,7 +107,7 @@ export default function List() {
   const deleteProject = async (_idDel) => {
     if (window.confirm("Delete project?")) {
       try {
-        const url = MAIN_ROUTE + "projects/" + _idDel;
+        const url = API_URL + "projects/" + _idDel;
         const data = await apiDelete(url, "DELETE");
         if (data.deletedCount) {
           doApi();
