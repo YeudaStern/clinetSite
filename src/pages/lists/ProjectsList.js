@@ -39,7 +39,7 @@ export default function ProjectsList() {
         const data = await apiDelete(url, "DELETE");
         if (data.deletedCount) {
           doApi();
-          toast.info("sdgfbfsgb")
+          toast.info("Project deleted successfully")
         }
       }
       catch (err) {

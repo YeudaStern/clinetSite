@@ -1,21 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { apiDelete, apiGet } from '../../services/apiServices'
-import { Link, useSearchParams } from 'react-router-dom';
-import { TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Table, Button, Box } from "@mui/material";
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
-import { toast } from 'react-toastify';
-import { API_URL } from '../../constant/url';
-import BarSide from '../../components/barside/BarSide';
-import BarNav from '../../components/navbar/BarNav';
 import { DataGrid } from '@mui/x-data-grid';
+import {  Button, Box } from "@mui/material";
+import { API_URL } from '../../constant/url';
+import React, { useState, useEffect } from 'react';
+import BarNav from '../../components/navbar/BarNav';
+import {  apiGet } from '../../services/apiServices';
+import BarSide from '../../components/barside/BarSide';
+import { Link, useSearchParams } from 'react-router-dom';
 
 
 export default function UsersList() {
 
   const [data, setData] = useState([]);
   const [query] = useSearchParams();
-
 
   useEffect(() => {
     doApi();
@@ -96,9 +92,10 @@ export default function UsersList() {
       type: 'number',
       editable: true,
     },
-    {      
-      headerName: 'Edit',
-      width: 100,
+    {
+      field: 'date_created',
+      headerName: 'Created on',
+      width: 116,
       editable: true,
     },
   ];
@@ -123,7 +120,7 @@ export default function UsersList() {
               initialState={{
                 pagination: {
                   paginationModel: {
-                    pageSize: 5,
+                    pageSize: 5,                 
                   },
                 },
               }}
