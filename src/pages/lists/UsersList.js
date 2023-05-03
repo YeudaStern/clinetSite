@@ -96,6 +96,11 @@ export default function UsersList() {
       type: 'number',
       editable: true,
     },
+    {      
+      headerName: 'Edit',
+      width: 100,
+      editable: true,
+    },
   ];
 
 
@@ -104,14 +109,14 @@ export default function UsersList() {
       <BarSide />
       <div className='flex-[10]'>
         <BarNav />
-        <div className='p-[20px] m-[20px] w-screen'>
+        <div className='p-[20px] md:m-[20px] w-screen'>
           <div className='font-medium text-neutral-400 mb-0.5 border-2 p-[8px]  flex justify-between'>
             Users Table
             <Button size="small" variant="contained" className='items-end' >
               <Link to='/users/newUser' className='hover:text-white'>Add new user</Link>
             </Button>
           </div>
-          <Box sx={{ height: 400, width: '98%' }}>
+          <Box sx={{ height: 400, width: '100%' }}>
             <DataGrid
               rows={data}
               columns={columns}
