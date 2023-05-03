@@ -3,19 +3,8 @@ import BarSide from "../../components/barside/BarSide"
 import BarNav from "../../components/navbar/BarNav"
 
 
-export default function NewProject() {
 
- //TODO:create doApiPost
- //TODO:create onSubForm
-
-
-
-
-
-
-
-
-
+export default function NewUser() {
   return (
     <div className="flex">
       <BarSide />
@@ -23,8 +12,8 @@ export default function NewProject() {
         <BarNav />
         <div className="'p-[20px] m-[20px]">
           <div className='font-medium text-neutral-400 p-[8px] shadow'>
-            <div> Add new project</div>
-            {/* create form control mui */}
+            <div> Add new user</div>
+
           </div>
         </div>
       </div>

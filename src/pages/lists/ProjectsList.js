@@ -39,7 +39,7 @@ export default function ProjectsList() {
         const data = await apiDelete(url, "DELETE");
         if (data.deletedCount) {
           doApi();
-          toast.info("sdgfbfsgb")
+          toast.info("Project deleted successfully")
         }
       }
       catch (err) {
@@ -57,7 +57,7 @@ export default function ProjectsList() {
       <BarSide />
       <div className='flex-[10]'>
         <BarNav />
-        <div className='p-[20px] m-[20px]'>
+        <div className='p-[20px] md:m-[20px]  md:w-auto w-screen'>
           <div className='font-medium text-neutral-400 mb-0.5 border-2 p-[8px]  flex justify-between'>
             Projects Table
             <Button size="small" variant="contained" className='items-end' >
