@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { apiDelete, apiGet } from '../../services/apiServices'
 import { useNavigate, useSearchParams } from 'react-router-dom';
@@ -15,12 +16,108 @@ export default function List() {
   const nav = useNavigate();
 
   useEffect(() => {
+=======
+
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+// import { makeStyles } from '@material-ui/core/styles';
+// import {
+//   TableContainer,
+//   Paper,
+//   Table,
+//   TableHead,
+//   TableRow,
+//   TableCell,
+//   TableBody,
+//   CircularProgress,
+// } from '@material-ui/core';
+// import { DataGrid } from '@mui/x-data-grid';
+
+// const useStyles = makeStyles((theme) => ({
+//   table: {
+//     minWidth: 650,
+//   },
+//   loading: {
+//     display: 'flex',
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     minHeight: 'calc(100vh - 150px)',
+//   },
+// }));
+
+// const columns = [
+//   { field: 'id', headerName: 'ID', width: 100 },
+//   { field: 'title', headerName: 'Title', width: 300 },
+//   { field: 'body', headerName: 'Body', width: 500 },
+// ];
+
+// const ResponsiveTable = () => {
+//   const classes = useStyles();
+//   const [loading, setLoading] = useState(true);
+//   const [rows, setRows] = useState([]);
+
+//   useEffect(() => {
+//     axios
+//       .get('http://localhost:3002/projects')
+//       .then((response) => {
+//         setRows(response.data);
+//         setLoading(false);
+//       });
+//   }, []);
+
+//   return (
+//     <div>
+//       {loading ? (
+//         <div className={classes.loading}>
+//           <CircularProgress />
+//         </div>
+//       ) : (
+//         <div style={{ height: 400, width: '100%' }}>
+//           <DataGrid rows={rows} columns={columns} pageSize={5} />
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default ResponsiveTable;
+
+
+
+
+
+
+import React, { useState, useEffect } from 'react';
+import { apiDelete, apiGet } from '../../services/apiServices'
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Table, Button, Box, Typography } from "@mui/material";
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+import { toast } from 'react-toastify';
+import { API_URL, MAIN_ROUTE } from '../../constant/url';
+import { DataGrid } from '@mui/x-data-grid';
+
+
+export default function List() {
+ 
+  
+  const [data, setData] = useState([]);
+  const [query] = useSearchParams();
+  const nav = useNavigate();
+  
+  useEffect(() => {
+   
+>>>>>>> table_of-_project
     doApi();
   }, [query])
 
 
   const doApi = async () => {
+<<<<<<< HEAD
     const url = MAIN_ROUTE + 'projects/projectsList';
+=======
+    const url = API_URL + 'projects/projectsList';
+>>>>>>> table_of-_project
     try {
       const data = await apiGet(url);
       console.log(data);
@@ -34,7 +131,11 @@ export default function List() {
   const deleteProject = async (_idDel) => {
     if (window.confirm("Delete project?")) {
       try {
+<<<<<<< HEAD
         const url = MAIN_ROUTE + "projects/" + _idDel;
+=======
+        const url = API_URL + "projects/" + _idDel;
+>>>>>>> table_of-_project
         const data = await apiDelete(url, "DELETE");
         if (data.deletedCount) {
           doApi();
@@ -48,6 +149,7 @@ export default function List() {
     }
   }
 
+<<<<<<< HEAD
   const datad = ()=>{
     return data;
   }
@@ -60,6 +162,17 @@ export default function List() {
   return (
 <Box sx={{width:"100%",  maxHeight: "300px"}}>
     <TableContainer component={Paper} className='drop-shadow-xl bg-slate-100 '>
+=======
+   const page = query.get("page") || 1;
+
+
+
+   return (
+
+  
+
+    <TableContainer component={Paper} className='drop-shadow-xl bg-slate-100'>
+>>>>>>> table_of-_project
       <Table className='table-fixed'>
         <TableHead>
           <TableRow align="center">
@@ -88,14 +201,22 @@ export default function List() {
                   deleteProject(row._id);
                 }} className='text-center me-10' size='small' color='error' variant="outlined" startIcon={<DeleteIcon />}>Delete</Button></TableCell>
               <TableCell><Button size='small' variant="outlined" startIcon={<EditIcon />}>Edit</Button></TableCell>
+<<<<<<< HEAD
                 
               
+=======
+
+             
+>>>>>>> table_of-_project
             </TableRow>
           ))
           }
         </TableBody>
       </Table>
     </TableContainer>
+<<<<<<< HEAD
     </Box>
+=======
+>>>>>>> table_of-_project
   )
 }
