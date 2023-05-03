@@ -5,6 +5,7 @@ import BarNav from "../../components/navbar/BarNav";
 
 export default function Home() {
   return (
+    
     <div className="home flex">
       <BarSide />
       <div className="homeContainer flex-[10]">
