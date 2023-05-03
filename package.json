@@ -3,22 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-=======
+
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",
->>>>>>> table_of-_project
+
     "@fullcalendar/core": "^6.1.5",
     "@fullcalendar/daygrid": "^6.1.5",
     "@fullcalendar/list": "^6.1.5",
     "@fullcalendar/timegrid": "^6.1.5",
     "@mui/icons-material": "^5.11.16",
-<<<<<<< HEAD
+
     "@mui/x-data-grid": "^6.2.0",
-=======
+
     "@mui/material": "^5.12.3",
     "@mui/x-data-grid": "^6.3.0",
->>>>>>> table_of-_project
     "@nivo/bar": "^0.80.0",
     "@nivo/core": "^0.80.0",
     "@nivo/geo": "^0.80.0",
