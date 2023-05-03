@@ -10,11 +10,9 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import {Clear, EngineeringRounded, Login } from '@mui/icons-material';
+import { Clear, EngineeringRounded } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
-import LanguageIcon from '@mui/icons-material/Language';
 import { Badge, IconButton } from '@mui/material';
-import { pink } from '@mui/material/colors';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -31,6 +29,8 @@ import { ThemeProvider, useTheme } from '@mui/private-theming';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { createTheme } from '@mui/system';
+import LoginIcon from '@mui/icons-material/Login';
+
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => { } });
 
@@ -164,17 +164,7 @@ export default function BurgerModal() {
           </ListItem>
         ))}
 
-        <ul className='px-2 mb-2'>
-          <li className='px-3 mb-2 rounded-full cursor-pointer'>
-            <Login className=' mx-1' style={{ color: '#1976d2' }} />
-            <Link to="login" className='icon'>LOG IN</Link>
-          </li>
-          <li className='px-3 rounded-full cursor-pointer'>
-            <LanguageIcon className='icon mx-1 ' color="primary" />
-            English
-          </li>
 
-        </ul>
       </List>
       <Divider />
       <List>
@@ -188,44 +178,54 @@ export default function BurgerModal() {
             </ListItemButton>
           </ListItem>
         ))}
-        <div>
-          <p className='px-2 text-gray-400 mb-1'>MASSAGE</p>
-          <IconButton className='mx-3' aria-label={notificationsLabel(100)}>
-            <Badge badgeContent={100} color="primary">
-              <MailIcon />
-            </Badge>
-          </IconButton>
-          <IconButton className='mx-2' aria-label={notificationsLabel(100)}>
-            <Badge badgeContent={100} sx={{ color: pink[500] }} >
-              <MailIcon />
-            </Badge>
-          </IconButton>
-        </div>
+
         <ul className='px-2'>
           <p className='title text-gray-400 mt-6 '>MAIN</p>
-          <li className='px-3 mb-12 rounded-full cursor-pointer'><DashboardCustomizeRoundedIcon className='icon bg-lime-500 rounded-full p-1' />
-            <span className='mt-1 mx-2'>Dashboard</span>
-          </li>
+          <Link to='/'>
+            <li className='px-3 mb-12 cursor-pointer'><DashboardCustomizeRoundedIcon />
+              <span className='mt-1 mx-2'>Dashboard</span>
+            </li>
+          </Link>
           <p className='title text-gray-400 mt-6'>LIST</p>
-          <li className='px-3   rounded-full cursor-pointer'><PeopleAltIcon className='icon  bg-pink-200 rounded-full p-1' />
-            <span className='mt-1 mx-2'>Users</span>
-          </li>
-          <li className='px-3 mt-3 rounded-full cursor-pointer'><AccountTreeIcon className='icon  bg-orange-200 rounded-full p-1' />
-            <span className='mt-1 mx-2'>Projects</span>
-          </li>
-          <li className='px-3 mb-12 mt-3 rounded-full cursor-pointer'><EngineeringRounded className='icon  bg-green-200 rounded-full p-1' />
-            <span className='mt-1 mx-2'>Constructor</span>
+          <Link to='/users'>
+            <li className='px-3   cursor-pointer'><PeopleAltIcon />
+              <span className='mt-1 mx-2'>Users</span>
+            </li>
+          </Link>
+          <Link to='/projects'>
+            <li className='px-3 mt-3 cursor-pointer'><AccountTreeIcon />
+              <span className='mt-1 mx-2'>Projects</span>
+            </li>
+          </Link>
+          <Link to=''>
+            <li className='px-3 mb-12 mt-3 cursor-pointer'><EngineeringRounded />
+              <span className='mt-1 mx-2'>Constructor</span>
+            </li>
+          </Link>
+          <li>
+            <p className='px-2 text-gray-400 mb-1'>MASSAGE</p>
+            <IconButton className='mx-3' aria-label={notificationsLabel(100)}>
+              <Badge badgeContent={100} color="primary">
+                <MailIcon />
+              </Badge>
+            </IconButton>
           </li>
           <p className='title text-gray-400 mt-6'>SERVICE</p>
-          <li className='px-3 mt-3 rounded-full cursor-pointer'><ConnectWithoutContactIcon className='icon bg-orange-200 rounded-full p-1' />
+          <li className='px-3 mt-3 cursor-pointer'><ConnectWithoutContactIcon />
             <span className='mt-1 mx-2'>Contact us</span>
           </li>
-          <li className='px-3 mt-3 rounded-full cursor-pointer'><AssignmentIndIcon className='icon bg-lime-200 rounded-full p-1' />
+          <li className='px-3 mt-3 cursor-pointer'><AssignmentIndIcon />
             <span className='mt-1 mx-2'>Profile</span>
           </li>
-          <li className='px-3 mb-12 mt-3 rounded-full cursor-pointer'><LogoutIcon className='icon bg-cyan-200 rounded-full p-1' />
+          <li className='px-3 mt-3 cursor-pointer'><LogoutIcon />
             <span className='mt-1 mx-2 '>Logout</span>
           </li>
+          <Link to="/login" className='icon'>
+          <li className='px-3 mt-3 cursor-pointer'>
+            <LoginIcon />
+            <span className='mt-1 mx-2'>Login</span>           
+          </li>
+          </Link>         
           <p className='title text-gray-400 mt-6'>DARK MODE</p>
         </ul>
         <ColorModeContext.Provider value={colorMode}>
@@ -275,9 +275,9 @@ export default function BurgerModal() {
               variant="h6"
               noWrap
               component="div"
-              sx={{ flexGrow: 1, display: { sm: 'block' }, margin: '9px', color: 'grey' }}
+              sx={{ flexGrow: 1,  margin: '9px', color: 'grey' }}
             >
-              <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH-OhVu04vi5MILVrHMKjFHz68ULPUqfuE-g&usqp=CAU' alt='person' className='w-9 rounded-full' />
+              <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH-OhVu04vi5MILVrHMKjFHz68ULPUqfuE-g&usqp=CAU' alt='logo' className='w-9 rounded-full' />
             </Typography>
           </Toolbar>
         </div>
