@@ -16,7 +16,7 @@ export default function UsersList() {
   const [data, setData] = useState([]);
   const [query] = useSearchParams();
 
-
+ 
   useEffect(() => {
     doApi();
   }, [query])
