@@ -109,7 +109,7 @@ export default function UsersList() {
       <BarSide />
       <div className='flex-[10]'>
         <BarNav />
-        <div className='p-[20px] md:m-[20px] w-screen'>
+        <div className='p-[20px] md:m-[20px]'>
           <div className='font-medium text-neutral-400 mb-0.5 border-2 p-[8px]  flex justify-between'>
             Users Table
             <Button size="small" variant="contained" className='items-end' >
