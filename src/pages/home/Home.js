@@ -5,7 +5,7 @@ import BarNav from "../../components/navbar/BarNav";
 
 export default function Home() {
   return (
-    <div className="home flex">
+    <div className="home md:flex">
       <BarSide />
       <div className="homeContainer flex-[10]">
         <BarNav />
@@ -13,11 +13,7 @@ export default function Home() {
           <Widget type='users' />
           <Widget type='projects' />
           <Widget type='contractors' />
-        </div>
-        {/* <div className="listContainer p-[20px] m-[20px]">
-          <div className="listTitle font-medium text-neutral-400 mb-3.5">Projects table</div>
-          <List type='projects' className='prolist' />
-        </div> */}
+        </div>       
       </div>
     </div>
   )

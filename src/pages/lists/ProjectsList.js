@@ -60,7 +60,9 @@ export default function ProjectsList() {
         <div className='p-[20px] m-[20px]'>
           <div className='font-medium text-neutral-400 mb-0.5 border-2 p-[8px]  flex justify-between'>
             Projects Table
-            <Button size="small" variant="contained" className='items-end' ><Link to='/projects/newProject' className='hover:text-white'>Add new project</Link></Button>
+            <Button size="small" variant="contained" className='items-end' >
+              <Link to='/projects/newProject' className='hover:text-white'>Add new project</Link>
+            </Button>
           </div>
           <TableContainer component={Paper} sx={{ maxHeight: "300px" }} className='drop-shadow-xl bg-slate-100'>
             <Table stickyHeader className=''>
