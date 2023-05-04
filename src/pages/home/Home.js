@@ -37,7 +37,7 @@ export default function Home() {
           {/* <ThemeProvider theme={darkThme}></ThemeProvider>
    <IconButton onClick={() => setDark(!dark)}> 
           {dark ? <Brightness7 /> : <Brightness4 />} */}
-          <div className="home flex">
+          <div className="home md:flex">
 
 
             <BarSide />
