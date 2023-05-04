@@ -1,3 +1,5 @@
+
+
 import * as React from 'react';
 import FullscreenExitOutlinedIcon from '@mui/icons-material/FullscreenExitOutlined';
 import MailIcon from '@mui/icons-material/Mail';
@@ -27,8 +29,8 @@ export default function BarNav() {
     return (
       <>
       {showBurgerElement && <BurgerModal/>}
-        <div className='navbar border text-stone-600 hidden md:flex '>
-          <div className='px-4 w-full flex justify-between '>
+        <div className='navbar border text-stone-600 hidden md:flex'>
+          <div className='mx-3 flex w-full justify-between'>
             <div className=''>
              
             </div>
