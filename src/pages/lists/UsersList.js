@@ -3,9 +3,10 @@ import {  Button, Box } from "@mui/material";
 import { API_URL } from '../../constant/url';
 import React, { useState, useEffect } from 'react';
 import BarNav from '../../components/navbar/BarNav';
-import {  apiGet } from '../../services/apiServices';
+import {  apiDelete, apiGet } from '../../services/apiServices';
 import BarSide from '../../components/barside/BarSide';
 import { Link, useSearchParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 export default function UsersList() {

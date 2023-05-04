@@ -30,7 +30,7 @@ export default function BarNav() {
       <>
       {showBurgerElement && <BurgerModal/>}
         <div className='navbar border text-stone-600 hidden md:flex '>
-          <div className='px-4 w-full flex justify-between '>
+          <div className=' flex w-full justify-between'>
             <div className=''>
              
             </div>

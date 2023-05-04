@@ -82,62 +82,6 @@ export default function BurgerModal() {
     [mode],
   );
 
-<<<<<<< HEAD
-  const Search = styled('div')(({ theme }) => ({
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.black, 0.15),
-    marginLeft: 4,
-    marginRight: 5,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(1),
-      width: 'auto',
-    },
-  }));
-=======
-  // const Search = styled('div')(({ theme }) => ({
-  //   position: 'relative',
-  //   borderRadius: theme.shape.borderRadius,
-  //   backgroundColor: alpha(theme.palette.common.black, 0.15),
-  //   marginLeft: 4,
-  //   marginRight: 5,
-  //   width: '70%',
-  //   [theme.breakpoints.up('sm')]: {
-  //     marginLeft: theme.spacing(1),
-  //     width: 'auto',
-  //   },
-  // }));
->>>>>>> 53be6a7a889314d926b91a7d26221c3d4edbe40d
-
-  // const SearchIconWrapper = styled('div')(({ theme }) => ({
-  //   padding: theme.spacing(0, 2),
-  //   height: '100%',
-  //   cursor: 'pointer',
-  //   position: 'absolute',
-  //   display: 'flex',
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  // }));
-
-  // const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  //   color: 'inherit',
-  //   '& .MuiInputBase-input': {
-  //     padding: theme.spacing(1, 1, 1, 0),
-  //     // vertical padding + font size from searchIcon
-  //     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-  //     transition: theme.transitions.create('width'),
-  //     width: '100%',
-  //     [theme.breakpoints.up('sm')]: {
-  //       width: '12ch',
-  //       '&:focus': {
-  //         width: '20ch',
-  //       },
-  //     },
-  //   },
-  // }));
-
-
   function notificationsLabel(count) {
     if (count === 0) {
       return 'no notifications';
