@@ -240,7 +240,7 @@ export default function BurgerModal() {
 
   return (
     <div className='flex justify-between'>
-
+ 
 
       <Box sx={{ flexGrow: 1 }}>
         <div className='bg-gray-200' position="static">
