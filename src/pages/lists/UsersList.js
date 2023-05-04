@@ -3,9 +3,10 @@ import {  Button, Box } from "@mui/material";
 import { API_URL } from '../../constant/url';
 import React, { useState, useEffect } from 'react';
 import BarNav from '../../components/navbar/BarNav';
-import {  apiGet } from '../../services/apiServices';
+import {  apiDelete, apiGet } from '../../services/apiServices';
 import BarSide from '../../components/barside/BarSide';
 import { Link, useSearchParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 export default function UsersList() {
@@ -30,22 +31,22 @@ export default function UsersList() {
     }
   }
 
-  // const deleteProject = async (_idDel) => {
-  //   if (window.confirm("Delete user?")) {
-  //     try {
-  //       const url = API_URL + "/users/" + _idDel;
-  //       const data = await apiDelete(url, "DELETE");
-  //       if (data.deletedCount) {
-  //         doApi();
-  //         toast.info("sdgfbfsgb")
-  //       }
-  //     }
-  //     catch (err) {
-  //       console.log(err);
-  //       toast.error("There problem")
-  //     }
-  //   }
-  // }
+  const deleteProject = async (_idDel) => {
+    if (window.confirm("Delete user?")) {
+      try {
+        const url = API_URL + "/users/" + _idDel;
+        const data = await apiDelete(url, "DELETE");
+        if (data.deletedCount) {
+          doApi();
+          toast.info("sdgfbfsgb")
+        }
+      }
+      catch (err) {
+        console.log(err);
+        toast.error("There problem")
+      }
+    }
+  }
 
   const columns = [
     { field: 'id', headerName: 'ID', width: 40 },
@@ -93,28 +94,18 @@ export default function UsersList() {
       type: 'number',
       editable: true,
     },
-    {
-      field: 'date_created',
-      headerName: 'Created on',
-      width: 116,
-      editable: true,
-    },
   ];
 
 
-  return (
-    <div className='flex'>
-      <BarSide />
-      <div className='flex-[10]'>
-        <BarNav />
-        <div className='p-[20px] md:m-[20px] md:w-auto w-screen'>
+  return (  
+        <div className='p-[20px] md:w-auto w-screen'>
           <div className='font-medium text-neutral-400 mb-0.5 border-2 p-[8px]  flex justify-between'>
             Users Table
             <Button size="small" variant="contained" className='items-end' >
               <Link to='/users/newUser' className='hover:text-white'>Add new user</Link>
-            </Button>
+            </Button> 
           </div>
-          <Box sx={{ height: 400, width: '100%' }}>
+          <Box sx={{ height: 400, width: '100%'}}>
             <DataGrid
               rows={data}
               columns={columns}
@@ -129,9 +120,8 @@ export default function UsersList() {
               checkboxSelection
               disableRowSelectionOnClick
             />
+         
           </Box>
         </div>
-      </div>
-    </div>
   )
 }

@@ -8,7 +8,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { EngineeringRounded } from '@mui/icons-material';
 import { ThemeProvider, useTheme } from '@mui/private-theming';
 import { Box, createTheme } from '@mui/system';
-import { IconButton } from '@mui/material';
+import { Button, IconButton } from '@mui/material';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { Link } from 'react-router-dom';
@@ -62,14 +62,15 @@ export default function BarSide() {
     [mode],
   );
   return (
-    <div className=' border-2 border-e-slate-950 min-h-screen w-56 hidden md:block text-neutral-800'>
-      <div className=' justify-center flex mt-2 h-12'>
-
-        <span><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH-OhVu04vi5MILVrHMKjFHz68ULPUqfuE-g&usqp=CAU' alt='person' className='avatar rounded-full w-10' /></span>
+    <div className='border-2 border-e-slate-950 min-h-screen hidden md:block'>
+    <div className='m-1  text-center'>
+      <Button>
+        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH-OhVu04vi5MILVrHMKjFHz68ULPUqfuE-g&usqp=CAU' alt='person' className=' rounded-full w-9' />
+      </Button>
       </div>
       <hr />
-      <div className=' px-4 hidden md:block '>
-        <ul className='px-2'>
+      <div className=' px-2'>
+        <ul>
           <p className='title text-gray-400 mt-6 '>MAIN</p>
           <Link to='/'  >
             <li className='px-3 mb-12 cursor-pointer '>
@@ -127,6 +128,8 @@ export default function BarSide() {
           </ThemeProvider>
         </ColorModeContext.Provider>
       </div>
+
+      
 
     </div>
 
