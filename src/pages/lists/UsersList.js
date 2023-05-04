@@ -33,22 +33,22 @@ export default function UsersList() {
     }
   }
 
-  // const deleteProject = async (_idDel) => {
-  //   if (window.confirm("Delete user?")) {
-  //     try {
-  //       const url = API_URL + "/users/" + _idDel;
-  //       const data = await apiDelete(url, "DELETE");
-  //       if (data.deletedCount) {
-  //         doApi();
-  //         toast.info("sdgfbfsgb")
-  //       }
-  //     }
-  //     catch (err) {
-  //       console.log(err);
-  //       toast.error("There problem")
-  //     }
-  //   }
-  // }
+  const deleteProject = async (_idDel) => {
+    if (window.confirm("Delete user?")) {
+      try {
+        const url = API_URL + "/users/" + _idDel;
+        const data = await apiDelete(url, "DELETE");
+        if (data.deletedCount) {
+          doApi();
+          toast.info("sdgfbfsgb")
+        }
+      }
+      catch (err) {
+        console.log(err);
+        toast.error("There problem")
+      }
+    }
+  }
 
   const columns = [
     { field: 'id', headerName: 'ID', width: 40 },
@@ -95,23 +95,23 @@ export default function UsersList() {
       width: 100,
       type: 'number',
       editable: true,
-    },
+    }
   ];
 
 
   return (
     <div className='flex'>
       <BarSide />
-      <div className='flex-[10]'>
+      <div>
         <BarNav />
-        <div className='p-[20px] m-[20px] w-screen'>
+        <div className='p-[20px] w-screen'>
           <div className='font-medium text-neutral-400 mb-0.5 border-2 p-[8px]  flex justify-between'>
             Users Table
             <Button size="small" variant="contained" className='items-end' >
               <Link to='/users/newUser' className='hover:text-white'>Add new user</Link>
-            </Button>
+            </Button> 
           </div>
-          <Box sx={{ height: 400, width: '98%' }}>
+          <Box sx={{ height: 400, width: '100%' }}>
             <DataGrid
               rows={data}
               columns={columns}
@@ -126,6 +126,7 @@ export default function UsersList() {
               checkboxSelection
               disableRowSelectionOnClick
             />
+         
           </Box>
         </div>
       </div>

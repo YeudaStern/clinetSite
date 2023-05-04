@@ -5,7 +5,7 @@ import { TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Table
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { toast } from 'react-toastify';
-import {  API_URL } from '../../constant/url';
+import { API_URL } from '../../constant/url';
 import BarSide from '../../components/barside/BarSide';
 import BarNav from '../../components/navbar/BarNav';
 
@@ -24,7 +24,7 @@ export default function ProjectsList() {
     const url = API_URL + '/projects/projectsList';
     try {
       const data = await apiGet(url);
-      // console.log(data);
+      console.log(data);
       setData(data);
     } catch (error) {
       console.log(error);
@@ -48,10 +48,7 @@ export default function ProjectsList() {
       }
     }
   }
-  const arr = [data]
-  console.log('first data');
-  
-  console.log(arr);
+
 
 
   const page = query.get("page") || 1;
@@ -61,15 +58,15 @@ export default function ProjectsList() {
       <div className='flex-[10]'>
         <BarNav />
         <div className='p-[20px] m-[20px]'>
-          <div className='font-medium text-neutral-400 mb-3.5 border-2 p-[8px] shadow flex justify-between'>
-            <div > Projects Table</div>
-            <div>
-           <Button size="small" variant="contained" className='items-end'><Link to='/projects/newProject'>Add new project</Link></Button>
-            </div>
+          <div className='font-medium text-neutral-400 mb-0.5 border-2 p-[8px]  flex justify-between'>
+            Projects Table
+            <Button size="small" variant="contained" className='items-end' >
+              <Link to='/projects/newProject' className='hover:text-white'>Add new project</Link>
+            </Button>
           </div>
           <TableContainer component={Paper} sx={{ maxHeight: "300px" }} className='drop-shadow-xl bg-slate-100'>
-            <Table className=''>
-              <TableHead>
+            <Table stickyHeader className=''>
+              <TableHead >
                 <TableRow align="center">
                   <TableCell>Id</TableCell>
                   <TableCell>Project Name</TableCell>
