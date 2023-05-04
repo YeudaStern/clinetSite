@@ -20,10 +20,7 @@ export default function NewProject() {
 
 
   return (
-    <div className="flex">
-      <BarSide />
-      <div className="flex-[10]">
-        <BarNav />
+ 
         <div className="'p-[20px] m-[20px]">
         <div className='font-medium text-neutral-400 mb-0.5 border-2 p-[8px]  flex justify-between'>
             Add new Project
@@ -32,7 +29,6 @@ export default function NewProject() {
             </Button>
           </div>
         </div>
-      </div>
-    </div>
+    
   )
 }

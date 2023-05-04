@@ -53,11 +53,9 @@ export default function ProjectsList() {
 
   const page = query.get("page") || 1;
   return (
-    <div className='flex'>
-      <BarSide />
-      <div className='flex-[10]'>
-        <BarNav />
-        <div className='p-[20px] md:m-[20px]  md:w-auto w-screen'>
+   
+     
+        <div className='p-[20px] md:m-[20px]  md:w-auto '>
           <div className='font-medium text-neutral-400 mb-0.5 border-2 p-[8px]  flex justify-between'>
             Projects Table
             <Button size="small" variant="contained" className='items-end' >
@@ -100,7 +98,6 @@ export default function ProjectsList() {
             </Table>
           </TableContainer>
         </div>
-      </div>
-    </div>
+   
   )
 }

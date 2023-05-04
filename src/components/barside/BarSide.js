@@ -8,7 +8,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { EngineeringRounded } from '@mui/icons-material';
 import { ThemeProvider, useTheme } from '@mui/private-theming';
 import { Box, createTheme } from '@mui/system';
-import { IconButton } from '@mui/material';
+import { Button, IconButton } from '@mui/material';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { Link } from 'react-router-dom';
@@ -29,13 +29,13 @@ function MyApp() {
         bgcolor: 'background.default',
         color: 'text.primary',
         borderRadius: 1,
-        p: 3,
+        p: 1,
       }}
     >
-      {theme.palette.mode} mode
-      <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
+      <IconButton  onClick={colorMode.toggleColorMode} color="inherit">
         {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
       </IconButton>
+      {theme.palette.mode} mode
     </Box>
   );
 }
@@ -62,7 +62,7 @@ export default function BarSide() {
     [mode],
   );
   return (
-    <div className=' border-2 border-e-slate-950 min-h-screen hidden md:block '>
+    <div className=' border-2 border-e-slate-950 min-h-screen w-56 hidden md:block text-neutral-800'>
       <div className=' justify-center flex mt-2 h-12'>
 
         <span><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH-OhVu04vi5MILVrHMKjFHz68ULPUqfuE-g&usqp=CAU' alt='person' className='avatar rounded-full w-10' /></span>
@@ -72,14 +72,14 @@ export default function BarSide() {
         <ul>
           <p className='title text-gray-400 mt-6 '>MAIN</p>
           <Link to='/'  >
-            <li className='px-3 mb-12 cursor-pointer '>
+            <li className='ps-1 mb-12 cursor-pointer mt-3'>
               <DashboardCustomizeRoundedIcon />
               <span className='mt-1 mx-2' >Dashboard</span>
             </li>
           </Link>
           <p className='title text-gray-400 mt-6'>LIST</p>
           <Link to='/users'>
-            <li className='px-3 cursor-pointer'>
+            <li className='ps-1 cursor-pointer mt-3'>
               <PeopleAltIcon />
               <span className='mt-1 mx-2'>
                 Users
@@ -87,35 +87,36 @@ export default function BarSide() {
             </li>
           </Link>
           <Link to='/projects'>
-            <li className='px-3 mt-3  cursor-pointer'><AccountTreeIcon />
+            <li className='ps-1 mt-3  cursor-pointer'>
+              <AccountTreeIcon />
               <span className='mt-1 mx-2'>
                 Projects
               </span>
             </li>
           </Link>
           <Link to='...'>
-            <li className='px-3 mb-12 mt-3 cursor-pointer'><EngineeringRounded />
+            <li className='ps-1 mb-12 mt-3 cursor-pointer'><EngineeringRounded />
               <span className='mt-1 mx-2'>Constructor</span>
             </li>
           </Link>
           <p className='title text-gray-400 mt-6'>SERVICE</p>
           <Link to='...'>
-            <li className='px-3 mt-3 cursor-pointer'><ConnectWithoutContactIcon />
+            <li className='ps-1 mt-3 cursor-pointer'><ConnectWithoutContactIcon />
               <span className='mt-1 mx-2'>Contact us</span>
             </li>
           </Link>
           <Link to='...'>
-            <li className='px-3 mt-3 cursor-pointer'><AssignmentIndIcon />
+            <li className='ps-1 mt-3 cursor-pointer'><AssignmentIndIcon />
               <span className='mt-1 mx-2'>Profile</span>
             </li>
           </Link>
           <Link to='...'>
-            <li className='px-3 mt-3 cursor-pointer'><LogoutIcon />
+            <li className='ps-1 mt-3 cursor-pointer'><LogoutIcon />
               <span className='mt-1 mx-2 '>Logout</span>
             </li>
           </Link>
           <Link to='/login'>
-            <li className='px-3 mb-12 mt-3 cursor-pointer'> <LoginIcon />
+            <li className='ps-1 mb-12 mt-3 cursor-pointer'> <LoginIcon />
               <span className='mt-1 mx-2 '>Login</span>
             </li>
           </Link>
@@ -127,6 +128,8 @@ export default function BarSide() {
           </ThemeProvider>
         </ColorModeContext.Provider>
       </div>
+
+      
 
     </div>
 

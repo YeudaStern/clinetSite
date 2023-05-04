@@ -8,10 +8,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 export default function NewUser() {
   return (
-    <div className="flex">
-      <BarSide />
-      <div className="flex-[10]">
-        <BarNav />
+ 
         <div className="'p-[20px] m-[20px]">
           <div className='font-medium text-neutral-400 mb-0.5 border-2 p-[8px]  flex justify-between'>
             Users Table
@@ -20,7 +17,6 @@ export default function NewUser() {
             </Button>
           </div>
         </div>
-      </div>
-    </div>
+  
   )
 }

@@ -19,12 +19,9 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import DashboardCustomizeRoundedIcon from '@mui/icons-material/DashboardCustomizeRounded';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
-import { styled, alpha } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
 import { ThemeProvider, useTheme } from '@mui/private-theming';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
@@ -180,11 +177,11 @@ export default function BurgerModal() {
             <span className='mt-1 mx-2 '>Logout</span>
           </li>
           <Link to="/login" className='icon'>
-          <li className='px-3 mt-3 cursor-pointer'>
-            <LoginIcon />
-            <span className='mt-1 mx-2'>Login</span>           
-          </li>
-          </Link>         
+            <li className='px-3 mt-3 cursor-pointer'>
+              <LoginIcon />
+              <span className='mt-1 mx-2'>Login</span>
+            </li>
+          </Link>
           <p className='title text-gray-400 mt-6'>DARK MODE</p>
         </ul>
         <ColorModeContext.Provider value={colorMode}>
@@ -198,11 +195,9 @@ export default function BurgerModal() {
   );
 
   return (
-    <div className='flex justify-between'>
- 
-
+    <div className=''>
       <Box sx={{ flexGrow: 1 }}>
-        <div className='bg-gray-200 ' position="static">
+        <div className='bg-gray-200' position="static">
           <Toolbar>
             <div>
               {['left'].map((anchor) => (
@@ -241,7 +236,6 @@ export default function BurgerModal() {
           </Toolbar>
         </div>
       </Box>
-
     </div>
   );
 }
