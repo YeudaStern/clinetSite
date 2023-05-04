@@ -68,18 +68,18 @@ export default function BarSide() {
         <span><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH-OhVu04vi5MILVrHMKjFHz68ULPUqfuE-g&usqp=CAU' alt='person' className='avatar rounded-full w-10' /></span>
       </div>
       <hr />
-      <div className=' px-4 hidden md:block '>
-        <ul className='px-2'>
+      <div className=' ps-3  hidden md:block '>
+        <ul className='ps-2'>
           <p className='title text-gray-400 mt-6 '>MAIN</p>
           <Link to='/'  >
-            <li className='px-3 mb-12 cursor-pointer '>
+            <li className='ps-1 mb-12 cursor-pointer mt-3'>
               <DashboardCustomizeRoundedIcon />
               <span className='mt-1 mx-2' >Dashboard</span>
             </li>
           </Link>
           <p className='title text-gray-400 mt-6'>LIST</p>
           <Link to='/users'>
-            <li className='px-3 cursor-pointer'>
+            <li className='ps-1 cursor-pointer mt-3'>
               <PeopleAltIcon />
               <span className='mt-1 mx-2'>
                 Users
@@ -87,35 +87,36 @@ export default function BarSide() {
             </li>
           </Link>
           <Link to='/projects'>
-            <li className='px-3 mt-3  cursor-pointer'><AccountTreeIcon />
+            <li className='ps-1 mt-3  cursor-pointer'>
+              <AccountTreeIcon />
               <span className='mt-1 mx-2'>
                 Projects
               </span>
             </li>
           </Link>
           <Link to='...'>
-            <li className='px-3 mb-12 mt-3 cursor-pointer'><EngineeringRounded />
+            <li className='ps-1 mb-12 mt-3 cursor-pointer'><EngineeringRounded />
               <span className='mt-1 mx-2'>Constructor</span>
             </li>
           </Link>
           <p className='title text-gray-400 mt-6'>SERVICE</p>
           <Link to='...'>
-            <li className='px-3 mt-3 cursor-pointer'><ConnectWithoutContactIcon />
+            <li className='ps-1 mt-3 cursor-pointer'><ConnectWithoutContactIcon />
               <span className='mt-1 mx-2'>Contact us</span>
             </li>
           </Link>
           <Link to='...'>
-            <li className='px-3 mt-3 cursor-pointer'><AssignmentIndIcon />
+            <li className='ps-1 mt-3 cursor-pointer'><AssignmentIndIcon />
               <span className='mt-1 mx-2'>Profile</span>
             </li>
           </Link>
           <Link to='...'>
-            <li className='px-3 mt-3 cursor-pointer'><LogoutIcon />
+            <li className='ps-1 mt-3 cursor-pointer'><LogoutIcon />
               <span className='mt-1 mx-2 '>Logout</span>
             </li>
           </Link>
           <Link to='/login'>
-            <li className='px-3 mb-12 mt-3 cursor-pointer'> <LoginIcon />
+            <li className='ps-1 mb-12 mt-3 cursor-pointer'> <LoginIcon />
               <span className='mt-1 mx-2 '>Login</span>
             </li>
           </Link>
