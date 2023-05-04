@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { apiDelete, apiGet } from '../../services/apiServices'
-import { Link, useSearchParams } from 'react-router-dom';
-import { TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Table, Button, Box } from "@mui/material";
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
-import { toast } from 'react-toastify';
-import { API_URL } from '../../constant/url';
-import BarSide from '../../components/barside/BarSide';
-import BarNav from '../../components/navbar/BarNav';
 import { DataGrid } from '@mui/x-data-grid';
+import {  Button, Box } from "@mui/material";
+import { API_URL } from '../../constant/url';
+import React, { useState, useEffect } from 'react';
+import BarNav from '../../components/navbar/BarNav';
+import {  apiGet } from '../../services/apiServices';
+import BarSide from '../../components/barside/BarSide';
+import { Link, useSearchParams } from 'react-router-dom';
 
 
 export default function UsersList() {
@@ -95,7 +92,7 @@ export default function UsersList() {
       width: 100,
       type: 'number',
       editable: true,
-    }
+    },
   ];
 
 
@@ -104,7 +101,7 @@ export default function UsersList() {
       <BarSide />
       <div>
         <BarNav />
-        <div className='p-[20px] w-screen'>
+        <div className='p-[20px] m-[20px] w-screen'>
           <div className='font-medium text-neutral-400 mb-0.5 border-2 p-[8px]  flex justify-between'>
             Users Table
             <Button size="small" variant="contained" className='items-end' >
@@ -118,7 +115,7 @@ export default function UsersList() {
               initialState={{
                 pagination: {
                   paginationModel: {
-                    pageSize: 5,
+                    pageSize: 5,                 
                   },
                 },
               }}

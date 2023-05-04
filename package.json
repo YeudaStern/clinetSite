@@ -12,10 +12,14 @@
     "@fullcalendar/list": "^6.1.5",
     "@fullcalendar/timegrid": "^6.1.5",
     "@mui/icons-material": "^5.11.16",
+<<<<<<< HEAD
 
     "@mui/x-data-grid": "^6.2.0",
 
     "@mui/material": "^5.12.3",
+=======
+    "@mui/material": "^5.12.1",
+>>>>>>> 53be6a7a889314d926b91a7d26221c3d4edbe40d
     "@mui/x-data-grid": "^6.3.0",
     "@nivo/bar": "^0.80.0",
     "@nivo/core": "^0.80.0",

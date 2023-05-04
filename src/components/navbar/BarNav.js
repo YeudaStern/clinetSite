@@ -32,16 +32,11 @@ export default function BarNav() {
         <div className='navbar border text-stone-600 hidden md:flex '>
           <div className='px-4 w-full flex justify-between '>
             <div className=''>
-              <div className="d-flex">
-                <input className="form-control me-2" type="search" placeholder="Search..." aria-label="Search" />
-                <button className="btn btn-outline-primary" type="submit">Search</button>
-              </div>
+             
             </div>
             <div className=' flex'>            
               
-              <div className='m-2 cursor-pointer'>
-                <FullscreenExitOutlinedIcon className='icon' />
-              </div>
+              
               <IconButton aria-label={notificationsLabel(100)}>
                 <Badge badgeContent={100} color="primary">
                   <MailIcon />
