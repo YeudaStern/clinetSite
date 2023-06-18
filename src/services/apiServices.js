@@ -8,7 +8,7 @@ const apiGet = async (url, body) => {
             url,
             data: body,
             headers: {
-                apiKey: localStorage[API_KEY],
+                'x-api-key': localStorage[API_KEY],
             },
 
         })
@@ -26,7 +26,7 @@ const apiPost = async (url, body) => {
             url,
             data: body,
             headers: {
-                "apiKey": localStorage[API_KEY],
+                'x-api-key': localStorage[API_KEY],
             },
 
         })
@@ -45,7 +45,7 @@ const apiPut = async (url, body) => {
             url,
             data: body,
             headers: {
-                "apiKey": localStorage[API_KEY],
+                'x-api-key': localStorage[API_KEY],
             },
 
         })
@@ -55,6 +55,26 @@ const apiPut = async (url, body) => {
         throw err;
     }
 }
+
+const apiPatch = async (url, body) => {
+    try {
+        let { data } = await axios({
+            method: "PATCH",
+            url,
+            data: body,
+            headers: {
+                'x-api-key': localStorage[API_KEY],
+            },
+
+        })
+        return data;
+    }
+    catch (err) {
+        throw err;
+    }
+}
+
+
 const apiDelete = async (url, body) => {
     try {
         let { data } = await axios({
@@ -62,7 +82,7 @@ const apiDelete = async (url, body) => {
             url,
             data: body,
             headers: {
-                "apiKey": localStorage[API_KEY],
+                'x-api-key': localStorage[API_KEY],
             },
 
         })
@@ -73,4 +93,4 @@ const apiDelete = async (url, body) => {
     }
 }
 
-export { apiGet, apiPost, apiDelete, apiPut}
+export { apiGet, apiPost, apiDelete,apiPatch, apiPut}

@@ -1,0 +1,13 @@
+.widget {
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+}
+.widget .right .percentage.positive {
+  color: green;
+}
+.widget .right .percentage.negative {
+  color: red;
+}
+.widget .right .icon {
+  padding: 5px;
+  border-radius: 5px;
+}/*# sourceMappingURL=widget.css.map */

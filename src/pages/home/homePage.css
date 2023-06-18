@@ -1,0 +1,12 @@
+.home {
+    background-image: url(https://images.pexels.com/photos/2271683/pexels-photo-2271683.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    /* background-image: url(https://images.pexels.com/photos/955733/pexels-photo-955733.jpeg); */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.insta {
+    background: rgb(131, 58, 180);
+    background: linear-gradient(319deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176,69,1)100%);
+}

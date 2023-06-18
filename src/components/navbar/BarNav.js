@@ -1,51 +1,48 @@
-
-
-import * as React from 'react';
-import MailIcon from '@mui/icons-material/Mail';
-// k
-import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
+import React, { useEffect, useState } from 'react'
+import '../../style/colorKit.css'
 import BurgerModal from "../burgers/burgerModal"
 import { useWindowSize } from '../../services/hooks/screenSizeHook';
+import { useStateContext } from '../../context';
+import { API_URL } from '../../constant/url';
+import { apiGet } from '../../services/apiServices';
 
 
 export default function BarNav() {
   const { width } = useWindowSize();
+  const { login } = useStateContext()
+  const [data, setData] = useState([])
 
+  useEffect(() => {
+    doApi()
+  }, [])
 
-  function notificationsLabel(count) {
-    if (count === 0) {
-      return 'no notifications';
+  const doApi = async () => {
+    const url = API_URL + '/users/userInfo';
+    try {
+      let data = await apiGet(url);
+      console.log(data);
+      setData(data)
+    } catch (error) {
+      console.log(error);
     }
-    if (count > 99) {
-      return 'more than 99 notifications';
-    }
-    return `${count} notifications`;
   }
-
+  console.log(login);
   let showBurgerElement = width <= 768;
 
-    return (
-      <>
-      {showBurgerElement && <BurgerModal/>}
-        <div className='navbar border text-stone-600 hidden md:flex '>
-          <div className='px-4 w-full flex justify-between '>
-            <div className=''>
-             
-            </div>
-            <div className=' flex'>            
-              
-              
-              <IconButton aria-label={notificationsLabel(100)}>
-                <Badge badgeContent={100} color="primary">
-                  <MailIcon />
-                </Badge>
-              </IconButton>            
-            </div>
-          </div>
-        </div>
-      </>
-    )
-  }
 
 
+
+
+  return (
+    <>
+      {showBurgerElement && <BurgerModal />}
+      {login === 2 &&
+        <div className='navbar border-e-slate-950 text-stone-300 hidden md:flex h-[70px] login2 pr-6'>ברוך הבא - {data.name}</div>
+      }
+      {login === 3 &&
+        <div className='navbar border-e-slate-950 text-stone-300 hidden md:flex h-[70px] login3 pr-6'>ברוך הבא - {data.name}</div>
+      }
+      <hr />
+    </>
+  )
+}

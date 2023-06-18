@@ -6,8 +6,10 @@ body,
 #root,
 .app,
 .content{
+    direction: rtl;
     height: 100%;
     width: 100%;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .app{
@@ -31,5 +33,5 @@ body,
 
 /* Handel on Hover */
 ::-webkit-scrollbar-track:hover{
-    background: #555;
+    background: #555;
 }

@@ -1,0 +1,26 @@
+/* Admin */
+/* navBar, sideBar, burger, */
+.login2 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(28 25 23 / var(--tw-bg-opacity));
+   
+}
+
+/* all the themes - tabel, userInfo */
+.colors2 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(41 37 36 / var(--tw-bg-opacity));
+}
+
+
+         /* Customer - User */
+/* navBar, sideBar, burger, */
+.login3 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(24 24 27 / var(--tw-bg-opacity));
+}
+/* all the themes - tabel, userInfo */
+.colors3 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(63 63 70 / var(--tw-bg-opacity));
+}
