@@ -74,8 +74,8 @@ export default function Files({ setFileResp }) {
 
 
   return (
-    <div className='md:h-[90vh] h-[70vh] colors2 overflow-y-scroll p-2 md:p-0'>
-      <div className='font-medium custom-shadow  text-neutral-300 m-2  p-3   flex justify-between colors2 rounded-lg'>
+    <div className=' colors2 overflow-y-scroll p-2 md:p-0'>
+      <div className='font-medium custom-shadow  text-neutral-300 md:m-2  p-3   flex justify-between colors2 rounded-lg'>
         <span className="font-bold text-lg">העלאת מסמכים </span>
       </div>
       <div className=' md:flex  md:justify-between'>
@@ -100,7 +100,7 @@ export default function Files({ setFileResp }) {
                   <button onClick={handleClear}><AiOutlineDelete className='text-3xl text-red-500 mt-3' /> </button>
                 </div>
               ) : (
-                <div>{selectedFile.name} <button onClick={handleClear}><AiOutlineDelete className='text-3xl text-red-700 ' /> </button></div>
+                <div>{selectedFile.name} <button onClick={handleClear}><AiOutlineDelete className='text-2xl text-red-700 ' /> </button></div>
               )}
               {uploadProgress > 0 && <p className='text-blue-200 '>העלאה בתהליך: <div class="container">
                 <div class="progress2 progress-moved">

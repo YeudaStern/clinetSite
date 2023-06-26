@@ -69,13 +69,13 @@ export default function NewUser() {
   return (
 
     <div className="p-[20px] m-[20px]">
-      <div className='font-medium text-neutral-300 mb-0.5 border-2 p-[10px] flex justify-between bg-slate-700'>
+      <div className='font-medium text-neutral-300 mb-1  p-[10px] flex justify-between login2  border-2 border-slate-500 md:rounded-t-lg'>
         <span className="pt-2"> צור משתמש חדש</span>
         <Button size="small" variant="contained" className='items-end' >
           <Link to='/users' className='hover:text-white p-1'>חזור < ArrowBackIcon /></Link>
         </Button>
       </div>
-      <div className=" md:mh-[400px] mh-[400px] border flex p-4 bg-slate-600  drop-shadow-xl" style={{ borderRadius: '0 0 8px 8px' }}>
+      <div className=" md:mh-[400px] mh-[400px]  border-2 border-slate-500 rounded-b-lg mt-2 flex p-4 colors2  drop-shadow-xl" style={{ borderRadius: '0 0 8px 8px' }}>
         <form className="w-full " onSubmit={handleSubmit(onSubForm)}>
           <div className="md:flex block">
             <div className="md:w-1/2 md:pe-4 md:p-1">

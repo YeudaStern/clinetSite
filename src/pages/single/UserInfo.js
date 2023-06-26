@@ -45,10 +45,10 @@ export default function UserInfo() {
     return (
         <>
             {login === 2 &&
-                <div className="p-[10px] m-[10px]">
-                    <div className='border-2 rounded-lg colors2 shadow-2xl h-full p-4  m-3 text-lg text-white'>
+                <div className="p-[10px] m-[10px] h-[80vh]">
+                    <div className='border-2 rounded-lg colors2 shadow-2xl h-[80vh] p-4  m-3 text-lg text-white'>
                         <h1 className='w-full mb-1 mt-1 p-1'><strong><BadgeOutlinedIcon /> פרטי משתמש : {data.name}</strong></h1>
-                        <div className='border-2 block md:flex'>
+                        <div className='border-2 block md:flex '>
                             <div className='flex flex-wrap md:w-1/2 rounded-xl p-6 ps-8 pe-8'>
                                 <div className='w-full p-2 ps-2  mb-4 shadow-xl'><ApartmentIcon />הפרויקט שלי : {data.p_name}</div>
                                 <div className='w-full p-2 ps-2  mb-4 shadow-xl'>מספר בנין : {data.building_name}</div>
@@ -59,7 +59,7 @@ export default function UserInfo() {
                                 <div className='w-full p-2 ps-2  mb-4 shadow-xl'>אימייל : {data.email}</div>
                                 <div className='w-full p-2 ps-2  mb-4 shadow-xl'>טלפון : {data.phone}</div>
                                 <div className='w-full p-2 ps-2  mb-4 shadow-xl'> <AdminPanelSettingsOutlinedIcon />הרשאת גישה : {data.role}</div>
-                                <div className='w-full p-2 ps-2  mb-4 shadow-xl'>התווסף בתאריך : {data.date_created}</div>
+                                <div className='w-full p-2 ps-2 mb-4 shadow-xl'>התווסף בתאריך: {new Date(data.date_created).toLocaleDateString()}</div>
                             </div>
                         </div>
                     </div>
@@ -80,7 +80,7 @@ export default function UserInfo() {
                                 <div className='w-full p-2 ps-2  mb-4 shadow-xl'>אימייל : {data.email}</div>
                                 <div className='w-full p-2 ps-2  mb-4 shadow-xl'>טלפון : {data.phone}</div>
                                 <div className='w-full p-2 ps-2  mb-4 shadow-xl'> <AdminPanelSettingsOutlinedIcon />הרשאת גישה : {data.role}</div>
-                                <div className='w-full p-2 ps-2  mb-4 shadow-xl'>התווסף בתאריך : {data.date_created}</div>
+                                <div className='w-full p-2 ps-2 mb-4 shadow-xl'>התווסף בתאריך: {new Date(data.date_created).toLocaleDateString()}</div>
                             </div>
                         </div>
                     </div>

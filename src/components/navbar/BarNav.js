@@ -37,12 +37,15 @@ export default function BarNav() {
     <>
       {showBurgerElement && <BurgerModal />}
       {login === 2 &&
-        <div className='navbar border-e-slate-950 text-stone-300 hidden md:flex h-[70px] login2 pr-6'>ברוך הבא - {data.name}</div>
+    
+          <div className='navbar border-e-slate-950 text-stone-300 hidden md:flex h-[70px] login2 pr-6 sticky-top border-b border-b-slate-600'>ברוך הבא - {data.name}  </div> 
+      
+      
       }
       {login === 3 &&
         <div className='navbar border-e-slate-950 text-stone-300 hidden md:flex h-[70px] login3 pr-6'>ברוך הבא - {data.name}</div>
       }
-      <hr />
+     
     </>
   )
 }

@@ -55,12 +55,12 @@ export default function NewProject() {
       const url = API_URL + "/projects";
       const data = await apiPost(url, _bodyData);
       if (data._id) {
-        toast.success("New Project added");
+        toast.success("פרוייקט נוסף בהצלחה");
         nav("/projects")
       }
     } catch (error) {
       console.log(error);
-      toast.error('There problem, try again later')
+      toast.error('ישנה בעיה, נסו שוב מאוחר יותר')
     }
   }
 
@@ -69,13 +69,13 @@ export default function NewProject() {
   return (
 
     <div className="p-[20px] m-[20px]">
-      <div className='font-medium text-neutral-300 mb-0.5 border-2 p-[10px] flex justify-between bg-slate-700'>
+      <div className='font-medium text-neutral-300 mb-1 rounded-t-lg border-2 border-slate-500 p-[10px] flex justify-between bg-stone-900'>
         <span className="pt-2"> צור פרויקט חדש</span>
         <Button size="small" variant="contained" className='items-end' >
           <Link to='/projects' className='hover:text-white p-1'>חזור < ArrowBackIcon /></Link>
         </Button>
       </div>
-      <div className=" md:h-[400px] mh-[400px] border flex p-4 bg-slate-600  drop-shadow-xl">
+      <div className=" md:h-[400px] mh-[400px] border-2 border-slate-500 flex p-4 bg-stone-800 rounded-b-lg  drop-shadow-xl">
         <form className="w-full " onSubmit={handleSubmit(onSubForm)}>
           <div className="md:flex block">
             <div className="md:w-1/2 md:pe-4 md:p-1">

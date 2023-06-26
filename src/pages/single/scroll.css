@@ -1,11 +1,8 @@
-  /* Hide the scrollbar */
+
   .overflow-y-scroll::-webkit-scrollbar {
     width: 0.5em;
   }
-  .overflow-x-scroll::-webkit-scrollbar {
-    width: 0.5em;
-    height: 0.5em; 
-  }
+ 
 
   .overflow-y-scroll::-webkit-scrollbar-track {
     background-color: transparent;  
@@ -15,14 +12,42 @@
     background-color: rgb(96, 165, 250); 
      border-radius: 100px;
   }
+
+
+
+  .overflow-scroll::-webkit-scrollbar {
+    width: 0.7em;
+    height: 0.7em;
+    
+  }
+
+
+  .overflow-scroll::-webkit-scrollbar-track {
+    background-color: transparent;  
+  }
+
+  .overflow-scroll::-webkit-scrollbar-thumb {
+    background-color: #292524; 
+  }
+
+
   .overflow-x-scroll::-webkit-scrollbar-track {
     background-color: transparent; 
   }
 
   .overflow-x-scroll::-webkit-scrollbar-thumb {
-    background-color: rgb(96, 165, 250); 
+    background-color: #292524; 
   
   }
+
+
+ 
+
+
+
+
+
+
   .custom-shadow2 {
     box-shadow: inset 1px 1px 11px 1px rgba(36, 41, 45, 0.424);
   }

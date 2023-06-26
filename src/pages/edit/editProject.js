@@ -85,7 +85,7 @@ export default function EditProject() {
 
   return (
     <div className='p-[20px] md:m-[20px] md:w-auto w-screen'>
-      <div className='font-medium text-neutral-300 mb-0.5 border-2 p-[10px] flex justify-between bg-slate-700'>
+      <div className='font-medium text-neutral-300 mb-0.5 border-2 border-slate-400 rounded-t-lg p-[10px] flex justify-between bg-stone-800'>
         <span className="pt-2">ערוך פרוייקט</span>
 
 
@@ -93,7 +93,7 @@ export default function EditProject() {
           <Link to='/projects' className='hover:text-white p-1'>חזור  <ArrowBackIcon /></Link>
         </Button>
       </div>
-      <div className=" md:h-[400px] mh-[400px] border flex p-4 bg-slate-600  drop-shadow-xl">
+      <div className=" md:h-[400px] mh-[400px] mt-1 flex p-4 bg-stone-800 drop-shadow-xl border-1 border-slate-400 rounded-b-lg">
         <form className="w-full " onSubmit={handleSubmit(onSubForm)}>
           <div className="md:flex block">
             <div className="md:w-1/2 md:pe-4 md:p-1">

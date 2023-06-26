@@ -30,7 +30,7 @@ export default function AppBar() {
   return (  
       <div className={color ? ' sticky top-0 z-10 bg-slate-800 bg-opacity-90 ease-in-out duration-1000' : ''}>
         <div className='bar flex justify-between items-center px-4 mx-auto  h-24 '>        
-          <ul className='hidden md:flex text-white text-xl'>
+          <ul className='hidden md:flex text-black text-xl'>
             <li className='p-4'><Link to='/login' className='bg-yellow-600 text-black font-bold mx-auto rounded-md h-3 p-2 hover:text-black'>כניסה</Link></li>
             <li className='p-4'><button ><a className=' hover:text-yellow-600  underline underline-offset-8 ' href='#home'>בית</a></button></li>
             <li className='p-4'><button><a className=' hover:text-yellow-600 underline underline-offset-8' href='#about'>עלינו</a></button></li>

@@ -8,7 +8,8 @@ import { API_URL } from '../../constant/url';
 import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettingsOutlined';
 import { Modal } from 'antd';
 import Files from './files';
-import Comments from './Comments'; import FilesList from '../lists/FileList';
+import Comments from './Comments';
+import FilesList from '../lists/FileList';
 import { IoIosCloseCircle } from 'react-icons/io';
 
 
@@ -33,7 +34,9 @@ export default function SingleClient() {
     delete newClient.date_created
     delete newClient.__v
     delete newClient.comments
+    setOpenModal(false)
     uploadFile(newClient, myId)
+    // nav("/projects/singleProject")
   }
 
   const uploadFile = async (newClient, id) => {
@@ -53,6 +56,7 @@ export default function SingleClient() {
     setMyId(client._id)
     console.log(client);
     fileResp.length > 0 && updateClient()
+    
   }, [fileResp])
 
   return (
@@ -99,7 +103,7 @@ export default function SingleClient() {
             ><Comments />
             </Modal>
             {/* files modal */}
-            <Modal style={{ paddingLeft: '0px' }}
+            <Modal style={{ paddingLeft: '0px'}}
               closable={true}
               closeIcon={<IoIosCloseCircle className='text-white text-2xl  absolute ml-24 mt-6' />}
               centered

@@ -18,25 +18,21 @@ export default function Comments({ setCommentResp }) {
   const [openModal, setOpenModal] = useState(false);
   const { client } = useStateContext();
 
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const response = await apiGet(API_URL + '/users/usersList');
-        console.log(response);
-        setUsers(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
 
-    fetchUsers();
-  }, []);
 
+
+
+
+
+
+
+  
   const saveComment = async (text) => {
     try {
       const payload = {
         text: text
       };
+
 
       // Adjust the API endpoint and HTTP request method based on your server routes
       const resp = await apiPut(API_URL + '/users/' + recipient + '/comments', payload);
@@ -45,6 +41,8 @@ export default function Comments({ setCommentResp }) {
       console.error(error);
     }
   };
+
+  
 
   const handleSendMessage = () => {
     if (inputText.trim() !== '' && recipient !== '') {
@@ -123,20 +121,7 @@ export default function Comments({ setCommentResp }) {
               placeholder="כתוב כאן את ההודעה..."
               className="w-full py-2 px-3 text-white -2 rounded-r-none border-blue-400 focus:outline-none colors2 focus:border-blue-300 rounded-lg custom-shadow"
             />
-            {users && users.length > 0 ? (
-              <select
-                value={recipient}
-                onChange={handleRecipientChange}
-                className="w-full py-2 px-3 text-white -2 rounded-r-none border-blue-400 focus:outline-none colors2 focus:border-blue-300 rounded-lg custom-shadow"
-              >
-                <option value="">בחר מקבל הודעה</option>
-                {users.map((user) => (
-                  <option key={user._id} value={user._id}>{user.name}</option>
-                ))}
-              </select>
-            ) : (
-              <div>Loading users...</div>
-            )}
+           
           </div>
           <Modal
             style={{ paddingLeft: '0px' }}

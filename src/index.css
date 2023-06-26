@@ -6,12 +6,16 @@ body,
 #root,
 .app,
 .content{
+  color: rgb(245, 245, 50);
     direction: rtl;
     height: 100%;
     width: 100%;
     font-family: 'Open Sans', sans-serif;
 }
+body{
+    background: rgba(0, 0, 0, 0.960);
 
+}
 .app{
     display: flex;
     position: relative;

@@ -6,28 +6,16 @@ import { useStateContext } from '../context';
 import { Alert, AlertTitle } from '@mui/material';
 
 export default function UserFilesList() {
-    const [data, setData] = useState([])
-    const { userFile } = useStateContext()
-    console.log(userFile);
-    const ID = userFile._id
-
-
+    const [data, setData] = useState([]);
+    const { userFile } = useStateContext();
+    const ID = userFile._id;
+    
+    const dataFiles = userFile.files;
+    console.log(dataFiles);
 
     useEffect(() => {
-        doApi();
-    }, []);
-
-    const doApi = async () => {
-        let url = API_URL + '/users/userFiles/' + ID;
-        try {
-            const data = await apiGet(url);
-            setData(data);
-        } catch (error) {
-            console.log(error);
-        }
-    };
-   
-
+        setData(userFile);
+    }, [userFile]);
 
 
 
@@ -221,11 +209,11 @@ export default function UserFilesList() {
     return (
         <div >
             <div className='font-medium text-neutral-300 mb-0.5 border-2 p-3 m-0.5 flex justify-between colors2 rounded-lg'>
-                <span className="font-bold text-lg"><span className="font-extralight">מסמכים של:</span> {data.name}</span>
+                <span className="font-bold text-lg"><span className="font-extralight">מסמכים של:</span> {userFile.name}</span>
             </div>
-            {data.length === 0 ? <span className="font-bold mt-1 "><Alert severity='info'><AlertTitle>אין לך מסמכים  בתיקייה !</AlertTitle></Alert></span> :
+            {dataFiles.length === 0 ? <span className="font-bold mt-1 "><Alert severity='info'><AlertTitle>אין לך מסמכים  בתיקייה !</AlertTitle></Alert></span> :
                 <div className='overflow-y-scroll max-h-[70vh] flex flex-wrap m-1 p-3 rounded-lg custom-shadow border-blue-200 custom-shadow justify-between colors2'>
-                    {data.map((file, index) => (
+                    {dataFiles.map((file, index) => (
                         <div className="flex flex-wrap w-full sm:w-auto custom-shadow rounded-lg p-4 shadow-md mb-4" key={index}>
                             {getDisplayURL(file)}
                             <button

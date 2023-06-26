@@ -1,6 +1,5 @@
 import "./index.css"
 import Home from "./pages/home/Home";
-
 import NewUser from "./pages/new/newUser";
 import UsersList from "./pages/lists/UsersList";
 import NewProject from "./pages/new/NewProject";
@@ -25,6 +24,8 @@ import ProjectCard from "./pages/cards/projectsCards";
 import SingleClient from "./pages/single/SingleClient";
 import UserInfo from "./pages/single/UserInfo";
 import Login from "./pages/logIn/LogIn";
+import MissionList from "./pages/lists/MissionList";
+import NewMission from "./pages/new/NewMission";
 
 
 
@@ -74,9 +75,8 @@ function App() {
       <div className={currentMode === 'dark' ? 'dark' : 'light'}>
         <BrowserRouter>
           {login === 0 &&
-            <div className='w-full h-[100vh] bg-white dark:bg-secondary'>
+            <div className='w-full h-[100vh] text-white dark:bg-secondary'>
               <div className='absolute right-1/2 bottom-1/2 transform translate-x-1/2 translate-y-1/2 '>
-                טוען...
                 <div className={` border-t-transparent border-solid animate-spin border-[var(--current-color)] rounded-full border-8 h-64 w-64`}></div>
               </div>
             </div>
@@ -93,7 +93,7 @@ function App() {
           {login === 2 &&
             <>
               <div className="flex">
-                <div className='flex-[10] w-[20%] '>
+                <div className='flex-[10] w-[20%]'>
                   <BarSide />
                 </div >
                 <div className='w-full md:w-[80%]'>
@@ -105,12 +105,14 @@ function App() {
                       <Route path="/users" element={<UsersList />} />
                       <Route path="/users/newUser" element={<NewUser />} />
 
+                      <Route path="/missions" element={<MissionList />} />
+                      <Route path="/missions/newMission" element={<NewMission />} />
+
                       <Route path="/projects" element={<ProjectsList />} />
                       <Route path="/projects/newProject" element={<NewProject />} />
                       <Route path="/projects/editProject/:id" element={<EditProject />} />
                       <Route path="/projects/singleProject" element={<ProjectCard />} />
                       <Route path="/projects/singleClient" element={<SingleClient />} />
-
                       <Route path="/contractors" element={<ContractorsList />} />
                     </Routes>
                   </div >
@@ -128,9 +130,9 @@ function App() {
                   <BarNav />
                   <div>
                     <Routes>
-                    <Route path="/*" element={<Home />} />
-                    <Route path="/userProfile" element={<UserInfo />} />
-                    <Route path="/contractors" element={<ContractorsList />} />
+                      <Route path="/*" element={<Home />} />
+                      <Route path="/userProfile" element={<UserInfo />} />
+                      <Route path="/contractors" element={<ContractorsList />} />
 
                     </Routes>
                   </div>
@@ -148,4 +150,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;

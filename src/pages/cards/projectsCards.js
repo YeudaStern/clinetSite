@@ -66,7 +66,7 @@ export default function ProjectCard() {
   return (
 
     <div className="p-[10px] m-[10px]">
-      <div className='font-medium text-neutral-300 mb-0.5 border-2 p-[10px] flex justify-between login2'>
+      <div className='font-medium text-neutral-300 mb-0.5 border-2 p-[10px] flex justify-between login2 rounded-lg'>
         <span className="pt-2">רשימת דיירים בבנין </span>
         <Button size="small" variant="contained" className='items-end' >
           <Link to='/projects' className='hover:text-white p-1'>חזור < ArrowBackIcon /></Link>
