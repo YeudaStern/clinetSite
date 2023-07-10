@@ -46,7 +46,7 @@ export default function UserInfo() {
         <>
             {login === 2 &&
                 <div className="p-[10px] m-[10px] h-[80vh]">
-                    <div className='border-2 rounded-lg colors2 shadow-2xl h-[80vh] p-4  m-3 text-lg text-white'>
+                    <div className='border-2 rounded-lg colors2 shadow-2xl md:h-[80vh] m-3 p-4 text-lg text-white'>
                         <h1 className='w-full mb-1 mt-1 p-1'><strong><BadgeOutlinedIcon /> פרטי משתמש : {data.name}</strong></h1>
                         <div className='border-2 block md:flex '>
                             <div className='flex flex-wrap md:w-1/2 rounded-xl p-6 ps-8 pe-8'>

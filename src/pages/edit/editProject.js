@@ -98,17 +98,17 @@ export default function EditProject() {
           <div className="md:flex block">
             <div className="md:w-1/2 md:pe-4 md:p-1">
               <label className="text-white">שם הפרויקט</label>
-              <input defaultValue={info.p_name} {...register("p_name", { minLength: 2 })} type="text" className="w-full p-2 mt-2 border-solid border-2 rounded-lg" />
+              <input defaultValue={info.p_name} {...register("p_name", { minLength: 2 })} type="text" className=" text-black w-full p-2 mt-2 border-solid border-2 rounded-lg" />
             </div>
             <div className="md:w-1/2 md:pe-4 md:p-1">
               <label className="text-white">קבלן מבצע</label>
-              <input defaultValue={info.contractor_name} {...register("contractor_name", { minLength: 2 })} type="text" className="w-full p-2 mt-2 border-solid border-2 rounded-lg" />
+              <input defaultValue={info.contractor_name} {...register("contractor_name", { minLength: 2 })} type="text" className=" text-black w-full p-2 mt-2 border-solid border-2 rounded-lg" />
             </div>
           </div>
           <div className="block md:flex">
             <div className="md:w-1/2 md:pe-4 md:p-1 mt-3">
               <label className="text-white">בחר עיר</label>
-              <input defaultValue={info.city_name} {...register("city_name", { minLength: 0 })} list="city-name" className="w-full p-2 mt-2 border-solid border-2 rounded-lg" onBlur={(e) => { setCitySelected(e.target.value) }} />
+              <input defaultValue={info.city_name} {...register("city_name", { minLength: 0 })} list="city-name" className=" text-black w-full p-2 mt-2 border-solid border-2 rounded-lg" onBlur={(e) => { setCitySelected(e.target.value) }} />
               <datalist id="city-name" >
                 {cityData.map((city, i) => (
                   <option value={city.שם_ישוב} key={i}></option>
@@ -117,7 +117,7 @@ export default function EditProject() {
             </div>
             <div className="md:w-1/2 md:pe-4 md:p-1 mt-3">
               <label className="text-white">בחר רחוב</label>
-              <input defaultValue={info.street_name} {...register("street_name", { minLength: 0 })} list="street-name" className="w-full p-2 mt-2 border-solid border-2 rounded-lg" />
+              <input defaultValue={info.street_name} {...register("street_name", { minLength: 0 })} list="street-name" className=" text-black w-full p-2 mt-2 border-solid border-2 rounded-lg" />
               <datalist id="street-name" >
                 {streetData.map((street, i) => (
 

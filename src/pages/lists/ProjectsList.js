@@ -1,4 +1,4 @@
-import { Button, TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody } from "@mui/material";
+import { Button, TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody, Pagination, PaginationItem } from "@mui/material";
 import { API_URL } from '../../constant/url';
 import React, { useState, useEffect } from 'react';
 import { apiDelete, apiGet } from '../../services/apiServices';
@@ -10,8 +10,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import BusinessIcon from '@mui/icons-material/Business';
 import DomainAddIcon from '@mui/icons-material/DomainAdd';
 import HomeIcon from '@mui/icons-material/Home';
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import '../single/scroll.css';
 
 export default function ProjectsList() {
@@ -20,7 +18,7 @@ export default function ProjectsList() {
   const { setSProject } = useStateContext();
   const nav = useNavigate();
   const page = parseInt(query.get("page")) || 1;
-  const itemsPerPage = 10;
+  const itemsPerPage = 7;
   const totalItems = data.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const startIndex = (page - 1) * itemsPerPage;
@@ -43,7 +41,7 @@ export default function ProjectsList() {
   };
 
   const deleteProject = async (_idDel, _name) => {
-    if (window.confirm(`להסיר את ${_name} מרשימת הפרוייקטים?`)) {
+    if (window.confirm(`להסיר את "${_name}" מרשימת הפרוייקטים?`)) {
       try {
         const url = API_URL + "/projects/" + _idDel;
         const data = await apiDelete(url, "DELETE");
@@ -68,22 +66,49 @@ export default function ProjectsList() {
       <div className='font-medium text-neutral-300 border-2 border-slate-500 mb-2 md:rounded-t-lg p-[10px] flex justify-between login2'>
         <span className="pt-2">טבלת פרוייקטים</span>
         <div>
-          {page > 1 && (
-            <Button component={Link} to={`/projects?page=${page - 1}`}><KeyboardArrowRightIcon className="text-white " /></Button>
-          )}
-          <span>{page}</span>
-          {page < totalPages && (
-            <Button component={Link} to={`/projects?page=${page + 1}`}><KeyboardArrowLeftIcon className="text-white" /></Button>
-          )}
+          <style>
+            {`
+        .MuiPagination-ul {
+          justify-content: flex-end;
+        }
+
+        .MuiPaginationItem-root {
+          flex-direction: row-reverse;
+        }
+        .MuiPaginationItem-icon {
+              transform: rotate(180deg);
+            }
+        `}
+          </style>
+          <Pagination
+            className="MuiPagination-ul hidden sm:block"
+            count={totalPages}
+            page={page}
+            shape="rounded"
+            color="primary"
+            size="medium"
+            showFirstButton
+            showLastButton
+            siblingCount={1}
+            boundaryCount={1}
+            renderItem={(item) => (
+              <PaginationItem
+                className="text-white MuiPaginationItem-root"
+                component={Link}
+                to={`/projects?page=${item.page}`}
+                {...item}
+              />
+            )}
+          />
         </div>
         <div >
-          <HomeIcon className=" ml-5 font-bold text-6xl cursor-pointer hover:text-yellow-500" onClick={() => nav('/')} />
+          <HomeIcon className=" ml-5 font-bold text-6xl cursor-pointer hover:text-yellow-500 hidden md:block " onClick={() => nav('/')} />
           <Button size="small" variant="contained" className='items-end'>
             <Link to='/projects/newProject' className='hover:text-white p-1'>הוספת פרוייקט <DomainAddIcon /></Link>
           </Button>
         </div>
       </div>
-      <TableContainer component={Paper} className="drop-shadow-xl border-2 border-slate-500 mb-2 rounded-b-lg overflow-scroll xl:h-[80vh] md:h-[67vh] overflow-x-hidden">
+      <TableContainer component={Paper} className="drop-shadow-xl border-2 border-slate-500 mb-2 rounded-b-lg overflow-scroll xl:h-[66vh] 2xl:h-[80vh] overflow-x-hidden">
         <Table>
           <TableHead>
             <TableRow className=" colors2 ">

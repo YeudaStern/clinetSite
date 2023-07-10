@@ -16,6 +16,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { useStateContext } from "../../context";
 import '../../pages/single/scroll.css';
+import logo2 from '../../components/barside/logo2.png'
 
 function Copyright(props) {
     return (
@@ -71,7 +72,9 @@ function Login() {
     };
 
     return (
-        <div className="h-screen bg-zinc-800">
+        <div className="h-screen bg-zinc-800 justify-start"  style={{ backgroundImage: `url(${logo2})` , backgroundRepeat:'no-repeat' , backgroundSize:'60px' , backgroundPositionX:'10px' , backgroundPositionY:'10px'}} >
+
+         {/* <img src={logo2} alt='logo' className='md:w-12 w-10 rounded-full' /> */}
             <Container maxWidth="xs">
                 <CssBaseline />
                 <Box

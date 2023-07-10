@@ -10,7 +10,7 @@ export default function Footer() {
         <div className=' bg-black mx-auto text-center'>
             <h1 className='md:text-4xl sm:text-3xl text-xl  py-6 text-slate-300 ' > בקרו באתר</h1>
             <p className='text-white mx-auto px-2'>בואו לבקר אותנו ברשתות החברתיות, אנו פעילים בפלטפורמות השונות ומפרסמים רבים מהפרויקטים שלנו, בהם תוכלו להתרשם ואולי להזמין עיצוב לדירה שלכם עוד היום<br />אנו מקווים שהתרשמתם וספרו לחברים שלכם<br />נהיה בקשר </p>
-            <div className='flex px-6 md:w-[500px] my-4 mx-auto'>
+            <div className='flex flex-wrap px-6 md:w-[500px] my-4 mx-auto'>
                 <FaFacebookSquare className='mx-auto  cursor-pointer text-blue-700' size={30} />
                 <FaInstagramSquare className='mx-auto  cursor-pointer insta w-7 h-7 rounded-md' size={30} />
                 <FaGithubSquare className='mx-auto  cursor-pointer text-white ' size={30} />
@@ -24,7 +24,7 @@ export default function Footer() {
             </div>
             <div className=' text-white'>נבנה ועוצב ע"י <br/><strong className=' text-amber-500'>M&Y</strong> </div>
             <p className=' text-white'>כל הזכויות שמורות </p>
-            <div className='p-2'><  AiOutlineCopyrightCircle className='mx-auto text-slate-300'/></div>
+            <div className='p-2'><AiOutlineCopyrightCircle className='mx-auto text-slate-300 mb-3'/></div>
       </div>
 )
 }

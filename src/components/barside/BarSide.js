@@ -15,6 +15,7 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { Link } from 'react-router-dom';
 import { useStateContext } from '../../context';
 import ChecklistRtlIcon from '@mui/icons-material/ChecklistRtl';
+import logo2 from './logo2.png'
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => { } });
 
@@ -66,27 +67,27 @@ export default function BarSide() {
   return (
     <>
       {login === 2 &&
-        <div className='border-l-slate-600 border-l min-h-screen fixed hidden md:block text-white w-[20%] login2'>
+        <div className='border-l-slate-600 border-l text-xs 2xl:text-base min-h-screen  fixed hidden md:block text-white w-[20%] login2'>
           <div className=' text-center h-[70px] border-b border-b-slate-600 '>
             <Button>
-              <img src='https://images.pexels.com/photos/936722/pexels-photo-936722.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='person' className=' rounded-full w-20' />
+              <img src={logo2} alt='person' className=' rounded-full w-14' />
             </Button>
           </div>
 
           <div className=' px-4 hidden md:block '>
             <ul className='px-2'>
-              <p className='title text-gray-300 mt-6 '>MAIN</p>
+              <p className='title text-gray-300 mt-2 2xl:mt-6 '>MAIN</p>
               <Link to='/'  >
-                <li className='ps-1 mb-12 cursor-pointer mt-3 hover:text-yellow-500'>
+                <li className='ps-1 2xl:mb-12 cursor-pointer mt-3 hover:text-yellow-500'>
                   <DashboardCustomizeRoundedIcon />
-                  <span className='mt-1 mx-2' >דף הבית</span>
+                  <span className='mt-1 mx-2 text-sm 2xl:text-base' >דף הבית</span>
                 </li>
               </Link>
-              <p className='title text-gray-300 mt-6'>LIST</p>
+              <p className='title text-gray-300 mt-3 2xl:mt-6 '>LIST</p>
               <Link to='/users'>
                 <li className='ps-1 cursor-pointer mt-3 hover:text-yellow-500'>
                   <PeopleAltIcon />
-                  <span className='mt-1 mx-2'>
+                  <span className='mt-1 mx-2 text-sm 2xl:text-base'>
                     לקוחות
                   </span>
                 </li>
@@ -94,7 +95,7 @@ export default function BarSide() {
               <Link to='/projects'>
                 <li className='ps-1 mt-3  cursor-pointer hover:text-yellow-500'>
                   <AccountTreeIcon />
-                  <span className='mt-1 mx-2'>
+                  <span className='mt-1 mx-2 text-sm 2xl:text-base'>
                     פרוייקטים
                   </span>
                 </li>
@@ -102,30 +103,30 @@ export default function BarSide() {
               <Link to='/missions'>
                 <li className='ps-1 mt-3  cursor-pointer hover:text-yellow-500'>
                   <ChecklistRtlIcon />
-                  <span className='mt-1 mx-2'>
+                  <span className='mt-1 mx-2 text-sm 2xl:text-base'>
                     משימות
                   </span>
                 </li>
               </Link>
               <Link to='/contractors'>
-                <li className='ps-1 mb-12 mt-3 cursor-pointer hover:text-yellow-500'><EngineeringRounded />
-                  <span className='mt-1 mx-2'>קבלנים</span>
+                <li className='ps-1 2xl:mb-12 mb:2 mt-3 cursor-pointer hover:text-yellow-500'><EngineeringRounded />
+                  <span className='mt-1 mx-2 text-sm 2xl:text-base'>קבלנים</span>
                 </li>
               </Link>
-              <p className='title text-gray-300 mt-6'>SERVICE</p>
+              <p className='title text-gray-300 2xl:mt-6 mt-3'>SERVICE</p>
               <Link to='...'>
                 <li className='ps-1 mt-3 cursor-pointer hover:text-yellow-500'><ConnectWithoutContactIcon />
-                  <span className='mt-1 mx-2'>צור קשר</span>
+                  <span className='mt-1 mx-2 text-sm 2xl:text-base'>צור קשר</span>
                 </li>
               </Link>
               <Link to='userProfile'>
                 <li className='ps-1 mt-3 cursor-pointer hover:text-yellow-500'><AssignmentIndIcon />
-                  <span className='mt-1 mx-2'>פרופיל</span>
+                  <span className='mt-1 mx-2 text-sm 2xl:text-base'>פרופיל</span>
                 </li>
               </Link>
               <Link to='/'>
                 <li className='ps-1 mt-3 cursor-pointer hover:text-yellow-500'><LogoutIcon />
-                  <span className='mt-1 mx-2 ' onClick={() => {
+                  <span className='mt-1 mx-2  text-sm 2xl:text-base' onClick={() => {
                     localStorage.token = ''
                     window.location.reload()
                   }}>יציאה</span>

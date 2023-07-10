@@ -29,7 +29,7 @@ export default function Cheat() {
     }
 
     return (
-        <div className='mr-[20px] justify-between h-[66vh] w-full  md:w-1/3 mb-4 pb-4 bg-stone-800 text-white cheat overflow-y-auto overflow-x-hidden rounded-lg'>
+        <div className='mr-[20px] justify-between h-[54vh] 2xl:h-[66vh] w-full  md:w-1/3 mb-4 pb-4 bg-stone-800 text-white cheat overflow-y-auto overflow-x-hidden rounded-lg'>
             <div className='w-full sticky-top overflow-hidden'>
                 <h1 className='w-full  text-2xl bg-stone-800 p-[10px]  border-b border-b-slate-400'>צ'אטים</h1>
                 <input placeholder='חפש איש קשר..' className='w-full bg-stone-800 p-[10px] pe-2 pt-3 ' />

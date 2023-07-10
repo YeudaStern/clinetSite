@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router-dom';
 import UserFilesList from './UserFilesList';
 import { useStateContext } from '../context';
 import Comments from '../pages/single/Comments';
+import ApartmentIcon from '@mui/icons-material/Apartment';
+import { BiTask } from "react-icons/bi";
 
 export default function HomeUser() {
     const [data, setData] = useState([]);
@@ -18,6 +20,7 @@ export default function HomeUser() {
     const [myId, setMyId] = useState('');
     const nav = useNavigate();
     const { setUserFile } = useStateContext()
+    const [missions, setMissions] = useState([]);
 
     const updateClient = async () => {
         try {
@@ -38,6 +41,7 @@ export default function HomeUser() {
 
     useEffect(() => {
         doApi();
+        doApiMissions();
     }, []);
 
     useEffect(() => {
@@ -51,12 +55,22 @@ export default function HomeUser() {
         setUserFile(data);
     }, [data, fileResp]);
 
-
+    const doApiMissions = async () => {
+        let url = API_URL + '/missions/missionsList';
+        try {
+            let dataMission = await apiGet(url);
+            console.log(dataMission);
+            setMissions(dataMission);
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     const doApi = async () => {
         let url = API_URL + '/users/userInfo';
         try {
             const response = await apiGet(url);
+            console.log(response);
             setData(response);
         } catch (error) {
             console.log(error);
@@ -71,21 +85,46 @@ export default function HomeUser() {
         } catch (error) {
             console.error('Error uploading file:', error);
         }
-
     };
-
 
     return (
         <>
-            <div className='font-medium mb-0.5 border-2 flex justify-between colors3 rounded-lg colors3 shadow-2xl h-[400px] p-4 m-3 text-lg text-white'>
-                <div className="w-1/4 md:w-2/12 h-full">
-                    <button className="w-full h-1/6 border mb-3 mt-4 rounded-lg bg-lime-700 hover:transition-colors" onClick={() => setOpenModalComment(true)}>צ'אט</button>
-                    <button className="w-full h-1/6 border mb-3 rounded-lg bg-blue-900" onClick={() => setOpenFilesModal(true)}>מסמכים</button>
-                    <button className="w-full h-1/6 border mb-3 rounded-lg bg-sky-700" onClick={() => setOpenModal(true)}>העלאת מסמכים</button>
-                    <button className="w-full h-1/6 border mb-3 rounded-lg bg-yellow-500">סטטוס פרויקט</button>
+            <div className='font-medium mb-0.5 border-2 md:flex justify-between colors3 rounded-lg colors3 shadow-2xl p-4 md:m-2 text-lg text-black'>
+                <div className="w-full h-[400px] md:w-1/4 ">
+                    <button className="w-full h-1/6 shadow mb-3 mt-4 rounded-lg bg-pink-300 hover:bg-pink-400 hover:transition-colors" onClick={() => setOpenModal(true)}>העלאת מסמכים</button>
+                    <button className="w-full h-1/6 shadow mb-3 rounded-lg bg-purple-300 hover:bg-purple-400" onClick={() => setOpenFilesModal(true)}>מסמכים</button>
+                    <button className="w-full h-1/6 shadow mb-3 rounded-lg bg-green-300 hover:bg-green-400" onClick={() => setOpenModalComment(true)}>צ'אט</button>
+                    <button className="w-full h-1/6 shadow mb-3 rounded-lg bg-yellow-300 hover:bg-yellow-400">סטטוס פרויקט</button>
+                </div>
+                <div className='h-[320px] w-full mt-4 md:w-1/3 mb-3 bg-[#18181B] text-white cheat z-50 rounded-lg'>
+                    <div className='w-full sticky-top'>
+                        <h1 className='w-full  text-2xl bg-[#18181B] p-[10px]  border-b border-b-slate-400'>משימות </h1>
+                    </div>
+                    <div className='w-full h-[266px] overflow-scroll'>
+                        {missions.map((mission) => (
+                            <div className='w-full p-2 shadow-xl border-b border-b-purple-400' key={mission.id}>
+                                <p>{mission.title} - {new Date(mission.date_created).toLocaleDateString()}</p>
+                                <p className='text-green-500 text-sm'>{mission.execution_status}</p>
+                                <p className='text-red-500 text-sm'>{mission.importance}</p>
+                            </div>
+                        ))}
+                    </div>
+
+                </div>
+                <div className='h-[80%] w-full mt-4 md:w-1/3 mb-3 bg-[#18181B] text-white cheat overflow-y-auto overflow-x-hidden rounded-lg'>
+                    <div className='w-full'>
+                    
+                        <h1 className='w-full  text-2xl bg-[#18181B] p-[10px]  border-b border-b-slate-400'>הפרויקט שלי    <ApartmentIcon /></h1>
+                    </div>
+                    <div className=' '>
+                        <div className='w-full p-2 ps-2 mt-2  mb-2 shadow-xl border-b-purple-400 border-b'>שם: {data.p_name}</div>
+                        <div className='w-full p-2 ps-2  mb-2 shadow-xl border-b-purple-400 border-b'>מספר בנין : {data.building_name}</div>
+                        <div className='w-full p-2 ps-2  mb-2 shadow-xl border-b-purple-400 border-b'>דירה : {data.apartment}</div>
+                        <div className='w-full p-2 ps-2  mb-2 shadow-xl border-b-purple-400 border-b'>קומה : {data.story}</div>
+                        <div className='w-full p-2 ps-2  mb-2 shadow-xl border-b-purple-400 border-b'>אחוזי התקדמות: </div>
+                    </div>
                 </div>
             </div>
-
             {/* Upload file */}
             <Modal
                 style={{ paddingLeft: '0px' }}
@@ -120,7 +159,8 @@ export default function HomeUser() {
                 onCancel={() => setOpenModalComment(false)}
                 width={600}
                 footer={null}
-            ><Comments />
+            >
+                <Comments />
             </Modal>
         </>
     );

@@ -64,8 +64,8 @@ export default function NewMission() {
                     </Button> */}
                 </div>
             </div>
-            <div className=" md:h-[400px] mh-[400px] border flex p-4 colors2  drop-shadow-xl rounded-b-lg">
-                <form className="w-full " onSubmit={handleSubmit(onSubForm)}>
+            <div className="  border flex p-4 colors2  drop-shadow-xl rounded-b-lg">
+                <form className="w-full md:h-[60vh] h-[80vh]" onSubmit={handleSubmit(onSubForm)}>
                     <div className="md:flex block">
                         <div className="md:w-1/2 md:pe-4 md:p-1">
                             <label className="text-white">נושא</label>

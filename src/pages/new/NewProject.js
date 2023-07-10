@@ -70,27 +70,27 @@ export default function NewProject() {
 
     <div className="p-[20px] m-[20px]">
       <div className='font-medium text-neutral-300 mb-1 rounded-t-lg border-2 border-slate-500 p-[10px] flex justify-between bg-stone-900'>
-        <span className="pt-2"> צור פרויקט חדש</span>
-        <Button size="small" variant="contained" className='items-end' >
+        <span className="pt-1"> צור פרויקט חדש</span>
+        <Button variant="contained" className='items-end h-8' >
           <Link to='/projects' className='hover:text-white p-1'>חזור < ArrowBackIcon /></Link>
         </Button>
       </div>
-      <div className=" md:h-[400px] mh-[400px] border-2 border-slate-500 flex p-4 bg-stone-800 rounded-b-lg  drop-shadow-xl">
+      <div className=" xl:h-[66vh] 2xl:h-[80vh]  border-2 border-slate-500 flex p-4 bg-stone-800 rounded-b-lg  drop-shadow-xl">
         <form className="w-full " onSubmit={handleSubmit(onSubForm)}>
           <div className="md:flex block">
             <div className="md:w-1/2 md:pe-4 md:p-1">
               <label className="text-white">שם הפרויקט</label>
-              <input {...register("p_name", { required: true, minLength: 2 })} type="text" placeholder="הזן את שם הפרויקט" className="w-full p-2 mt-2 border-solid border-2 rounded-lg"  />
+              <input {...register("p_name", { required: true, minLength: 2 })} type="text" placeholder="הזן את שם הפרויקט" className="w-full p-1 mt-2 border-solid border-2 rounded-lg"  />
             </div>
             <div className="md:w-1/2 md:pe-4 md:p-1">
               <label className="text-white">קבלן מבצע</label>
-              <input {...register("contractor_name", { required: true, minLength: 2 })} type="text" placeholder="הזן את שם הקבלן" className="w-full p-2 mt-2 border-solid border-2 rounded-lg" />
+              <input {...register("contractor_name", { required: true, minLength: 2 })} type="text" placeholder="הזן את שם הקבלן" className="w-full p-1 mt-2 border-solid border-2 rounded-lg" />
             </div>
           </div>
           <div className="block md:flex">
             <div className="md:w-1/2 md:pe-4 md:p-1 mt-3">
               <label className="text-white">בחר עיר</label>
-              <input placeholder="לחץ לבחירת עיר" {...register("city_name", { required: true, minLength: 2 })} list="city-name" className="w-full p-2 mt-2 border-solid border-2 rounded-lg" onBlur={(e) => { setCitySelected(e.target.value) }} />
+              <input placeholder="לחץ לבחירת עיר" {...register("city_name", { required: true, minLength: 2 })} list="city-name" className="w-full p-1 mt-2 border-solid border-2 rounded-lg" onBlur={(e) => { setCitySelected(e.target.value) }} />
               <datalist id="city-name" >
                 {cityData.map((city, i) => (
                   <option value={city.שם_ישוב} key={i}></option>
@@ -99,7 +99,7 @@ export default function NewProject() {
             </div>
             <div className="md:w-1/2 md:pe-4 md:p-1 mt-3">
               <label className="text-white">בחר רחוב</label>
-              <input placeholder="לחץ לבחירת עיר"  {...register("street_name", { required: true, minLength: 2 })} list="street-name" className="w-full p-2 mt-2 border-solid border-2 rounded-lg" />
+              <input placeholder="לחץ לבחירת עיר"  {...register("street_name", { required: true, minLength: 2 })} list="street-name" className="w-full p-1 mt-2 border-solid border-2 rounded-lg" />
               <datalist id="street-name" >
                 {streetData.map((street, i) => (
 
@@ -110,7 +110,7 @@ export default function NewProject() {
           </div>
           <div className=" w-full md:pe-4 md:p-1 mt-3">
             <label className="text-white">בנין (מספר או כינוי)</label>
-            <input {...register("building_name", { required: true, minLength: 1 })} type="text" placeholder="הזן את שם הבנין " className="w-full p-2 mt-2 border-solid border-2 rounded-lg" required />
+            <input {...register("building_name", { required: true, minLength: 1 })} type="text" placeholder="הזן את שם הבנין " className="w-full p-1 mt-2 border-solid border-2 rounded-lg" required />
 
           </div>
           <div className="items-center justify-center flex mt-4">

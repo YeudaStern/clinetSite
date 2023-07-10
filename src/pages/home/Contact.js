@@ -7,7 +7,7 @@ export default function Contact() {
 
     return (
         <div className='md:px-36 contact px-10 pb-20 pt-20 bg-gray-950' id='contact'>
-            <Row className='mb-5 '>
+            <Row className='md:mb-5 '>
                 <Col lg='8'>
                     <h1 className='font-bold md:text-7xl text-3xl md:mb-4 text-gray-500 border-b border-b-gray-400'>שמרו על קשר</h1>
                 </Col>

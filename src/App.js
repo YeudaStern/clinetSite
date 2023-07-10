@@ -5,6 +5,7 @@ import UsersList from "./pages/lists/UsersList";
 import NewProject from "./pages/new/NewProject";
 import ProjectsList from "./pages/lists/ProjectsList";
 import EditProject from "./pages/edit/editProject"
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -26,6 +27,8 @@ import UserInfo from "./pages/single/UserInfo";
 import Login from "./pages/logIn/LogIn";
 import MissionList from "./pages/lists/MissionList";
 import NewMission from "./pages/new/NewMission";
+import EditMission from "./pages/edit/editMissions";
+import MissionUser from "./pages/single/MissionsUser";
 
 
 
@@ -107,6 +110,8 @@ function App() {
 
                       <Route path="/missions" element={<MissionList />} />
                       <Route path="/missions/newMission" element={<NewMission />} />
+                      <Route path="/missions/missionUser/:id" element={<MissionUser />} />
+                      <Route path="/missions/editMission/:id" element={<EditMission />} />
 
                       <Route path="/projects" element={<ProjectsList />} />
                       <Route path="/projects/newProject" element={<NewProject />} />
