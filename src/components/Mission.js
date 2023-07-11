@@ -158,7 +158,7 @@ export default function Mission() {
                 <div className='w-full h-5/6 overflow-y-auto'>
                     {data.length === 0 ? <h2 className='w-full sticky-top overflow-hidden text-2xl bg-zinc-700 p-2 border-b border-b-slate-400 rounded-tr-lg'>אין משימות</h2> :
                         <>
-                            <h2 className='w-full sticky-top overflow-hidden text-2xl p-2 border-b border-b-slate-400 rounded-tr-lg bg-stone-800'>משימות</h2>
+                            <h2 className='w-full overflow-hidden text-2xl p-2 border-b border-b-slate-400 rounded-tr-lg bg-stone-800'>משימות</h2>
                             {data.map((mission) => (
                                 <p className='w-full h-[56px] text-right pr-3 cursor-pointer hover:bg-zinc-700 text-lg p-1 justify-between flex border-b border-b-slate-400'>
                                 <span className='pt-2'>  <FiberManualRecordOutlinedIcon /> {mission.title} -</span>

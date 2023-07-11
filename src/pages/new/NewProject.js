@@ -80,7 +80,7 @@ export default function NewProject() {
           <div className="md:flex block">
             <div className="md:w-1/2 md:pe-4 md:p-1">
               <label className="text-white">שם הפרויקט</label>
-              <input {...register("p_name", { required: true, minLength: 2 })} type="text" placeholder="הזן את שם הפרויקט" className="w-full p-1 mt-2 border-solid border-2 rounded-lg"  />
+              <input {...register("p_name", { required: true, minLength: 2 })} type="text" placeholder="הזן את שם הפרויקט" className="w-full p-1 mt-2 border-solid border-2 rounded-lg" />
             </div>
             <div className="md:w-1/2 md:pe-4 md:p-1">
               <label className="text-white">קבלן מבצע</label>
