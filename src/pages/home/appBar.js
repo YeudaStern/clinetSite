@@ -41,7 +41,7 @@ export default function AppBar() {
             <img src={logo3} alt='logo' className='md:w-12 w-10 mt-2 md:mt-0 rounded-full' />
           </Button>
           <div onClick={hendleNav} className='block md:hidden text-black md:text-white'>
-            {nav ? <VscChromeClose size={30} /> : <VscThreeBars size={30} />}
+            {nav ? <VscChromeClose size={30} /> : <VscThreeBars size={30} className='text-red-900' />}
           </div>
           <div className={nav ? ' fixed right-0 top-0 h-full w-[50%] border-r border-r-gray-900 bg-gray-900  bg-opacity-95 ease-in-out duration-1000 ' : 'fixed right-[-100%] ease-out duration-500'}>
             <div className=' mt-4 mr-5 '>

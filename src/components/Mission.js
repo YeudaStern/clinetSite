@@ -158,11 +158,13 @@ export default function Mission() {
                 <div className='w-full h-5/6 overflow-y-auto'>
                     {data.length === 0 ? <h2 className='w-full sticky-top overflow-hidden text-2xl bg-zinc-700 p-2 border-b border-b-slate-400 rounded-tr-lg'>אין משימות</h2> :
                         <>
-                            <h2 className='w-full overflow-hidden text-2xl p-2 border-b border-b-slate-400 rounded-tr-lg bg-stone-800'>משימות</h2>
+                            <h2 className='w-full overflow-hidden text-2xl p-2 border-b border-b-slate-400 rounded-tr-lg bg-stone-800 sticky top-0'>משימות</h2>
                             {data.map((mission) => (
-                                <p className='w-full h-[56px] text-right pr-3 cursor-pointer hover:bg-zinc-700 text-lg p-1 justify-between flex border-b border-b-slate-400'>
-                                <span className='pt-2'>  <FiberManualRecordOutlinedIcon /> {mission.title} -</span>
-                                  
+                                <p
+                                    className='w-full h-[56px] text-right pr-3 cursor-pointer hover:bg-zinc-700 text-lg p-1 justify-between flex border-b border-b-slate-400'
+                                    onClick={() => nav(`/missions/missionUser/${mission.id}`)}
+                                >
+                                    <span className='pt-2'>  <FiberManualRecordOutlinedIcon /> {mission.title} -</span>
                                     {mission.execution_status === 'waiting' ? (
                                         <span className="border-orange-400 border-1 text-white px-2 mr-2 rounded-lg md:ml-2 m-2">
                                             ממתין
@@ -174,13 +176,14 @@ export default function Mission() {
                                     )}
                                 </p>
                             ))}
+
                         </>
                     }
                 </div>
                 <div className='w-full h-1/6 p-2 justify-around flex items-center  bg-stone-800 overflow-hidden border-t border-t-slate-600 rounded-br-lg'>
-                    <button onClick={() => { nav('/users/newUser') }} className='w-1/4 h-full text-xs px-2 rounded-lg cheat1'>הוסף משתמש</button>
-                    <button onClick={() => { nav('/projects/newProject') }} className='w-1/4 h-full text-xs px-2 cheat1  rounded-lg '>הוסף פרויקט</button>
-                    <button onClick={() => { nav('/missions/newMission') }} className='w-1/4 h-full text-xs px-2 cheat1  rounded-lg '>הוסף משימה</button>
+                    <button onClick={() => { nav('/users/newUser') }} className='w-1/4 h-10 md:h-full text-xs px-2 rounded-lg cheat1'>הוסף משתמש</button>
+                    <button onClick={() => { nav('/projects/newProject') }} className='w-1/4 h-10 md:h-full text-xs px-2 cheat1  rounded-lg '>הוסף פרויקט</button>
+                    <button onClick={() => { nav('/missions/newMission') }} className='w-1/4 h-10 md:h-full text-xs px-2 cheat1  rounded-lg '>הוסף משימה</button>
                 </div>
             </div>
             <div className='md:w-1/2 w-full h-full pb-1'>

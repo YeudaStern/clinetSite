@@ -60,13 +60,13 @@ export default function Contact() {
         <Col lg='7' className='flex align-middle'>
           <form className='w-full' onSubmit={handleSubmit(onSubForm)}>
             <Row>
-              <Col lg='3' className='mb-2'>
+              <Col lg='3' className='mb-3 md:mb-2'>
                 <input  {...register("name", { required: true, minLength: 2 })} className='form-control border-1 border-gray-400 focus:outline-none focus:border-slate-700 shadow bg-slate-900 bg-opacity-90' name='name' placeholder='שם:' type='text' />
               </Col>
-              <Col lg='6' className='mb-2'>
+              <Col lg='6' className='mb-3'>
                 <input  {...register("email", { required: true, minLength: 2 })} className='form-control border-1 border-gray-400 focus:outline-none focus:border-slate-700 shadow bg-slate-900 bg-opacity-90 ' name='email' placeholder='מייל:' type='email' />
               </Col>
-              <Col lg='3' className='mb-2 '>
+              <Col lg='3' className='mb-3 '>
                 <input  {...register("phone", { required: true, minLength: 2 })} className='form-control border-1 border-gray-400 focus:outline-none focus:border-slate-700 shadow bg-slate-900 bg-opacity-90 ' name='phone' placeholder='טל:' type='phone' />
               </Col>
             </Row>

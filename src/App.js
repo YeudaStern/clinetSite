@@ -29,6 +29,7 @@ import MissionList from "./pages/lists/MissionList";
 import NewMission from "./pages/new/NewMission";
 import EditMission from "./pages/edit/editMissions";
 import MissionUser from "./pages/single/MissionsUser";
+import AllOfFiles from "./components/AllOfFiles";
 
 
 
@@ -103,6 +104,7 @@ function App() {
                   <BarNav />
                   <div >
                     <Routes>
+                    
                       <Route path="/*" element={<Home />} />
                       <Route path="/userProfile" element={<UserInfo />} />
                       <Route path="/users" element={<UsersList />} />
@@ -119,6 +121,9 @@ function App() {
                       <Route path="/projects/singleProject" element={<ProjectCard />} />
                       <Route path="/projects/singleClient" element={<SingleClient />} />
                       <Route path="/contractors" element={<ContractorsList />} />
+
+                      <Route path="/listOfAll" element={<AllOfFiles />} />
+
                     </Routes>
                   </div >
                 </div >

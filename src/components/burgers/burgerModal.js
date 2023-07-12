@@ -26,7 +26,7 @@ import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { useStateContext } from '../../context';
 import ChecklistRtlIcon from '@mui/icons-material/ChecklistRtl';
-
+import logo2 from './../barside/logo2.png'
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => { } });
 
@@ -200,9 +200,6 @@ export default function BurgerModal() {
                 </li>
               </Link>
               <p className='title text-gray-300 mt-6'>SERVICE</p>
-              <li className='px-3 mt-3 cursor-pointer hover:text-yellow-500'><ConnectWithoutContactIcon />
-                <span className='mt-1 mx-2'>צור קשר</span>
-              </li>
               <Link to='userProfile'>
                 <li className='px-3 mt-3 cursor-pointer hover:text-yellow-500'><AssignmentIndIcon />
                   <span className='mt-1 mx-2'>פרופיל</span>
@@ -246,8 +243,8 @@ export default function BurgerModal() {
                 </React.Fragment>
               ))}
             </div>
-            <Button className='text-center'>
-              <img src='https://images.pexels.com/photos/936722/pexels-photo-936722.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='person' className=' rounded-full w-12' />
+            <Button>
+              <img src={logo2} alt='person' className=' rounded-full w-10' />
             </Button>
           </div>
         }

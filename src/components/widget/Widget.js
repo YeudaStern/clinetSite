@@ -31,10 +31,10 @@ export default function Widget({ type, url, text }) {
           <BusinessOutlinedIcon className='icon' style={{ color: "goldenrod", background: "rgba(218, 165, 32, 0.284)" }} />
       };
       break;
-    case 'messages':
+    case 'missions':
       data = {
         title: type.toUpperCase(),
-        link: <Link className='hover:text-yellow-500' to='/comments'>{text}</Link>,
+        link: <Link className='hover:text-yellow-500' to='/missions'>{text}</Link>,
         icon:
           <EngineeringOutlinedIcon className='icon' style={{ color: "rgb(2, 66, 2)", background: "rgba(0, 128, 0, 0.223)" }} />
       };

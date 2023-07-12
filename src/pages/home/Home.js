@@ -17,7 +17,7 @@ export default function Home() {
         <div className="widgets block md:flex me-10 pt-4">
           <Widget type='projects' url='/projects/' text='פרוייקטים' />
           <Widget type='users' url='/users/' text='דיירים' />
-          <Widget type='messages' url='/comments/' text='הודעות' />
+          <Widget type='missions' url='/missions/' text='משימות' />
         </div>
         <div className="text-white  block md:flex me-10 pt-2">
           <Mission />

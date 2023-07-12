@@ -56,7 +56,7 @@ export default function MissionList() {
 
     return (
         <div className="p-[10px] md:m-[10px] md:w-auto">
-            <div className="font-medium text-neutral-300 mb-2 border p-[10px] flex justify-between login2 rounded-t-lg">
+            <div className="font-medium text-neutral-300 mb-2 border-2 border-slate-500 p-[10px] flex justify-between login2 rounded-t-lg">
                 <span className="pt-2"> משימות</span>
                 <div>
                     <style>
@@ -94,15 +94,17 @@ export default function MissionList() {
                         )}
                     />
                 </div>
-                <HomeIcon className="ml-5 font-bold text-6xl cursor-pointer hover:text-yellow-500 hidden md:block" onClick={() => nav('/')} />
-                <Button size="small" variant="contained" className="items-end">
-                    <Link to="/missions/newMission" className="hover:text-white p-1">
-                        <PlaylistAddIcon /> הוספת משימה
-                    </Link>
-                </Button>
+                <div>
+                    <HomeIcon className="ml-5 font-bold text-6xl cursor-pointer hover:text-yellow-500 hidden md:block" onClick={() => nav('/')} />
+                    <Button size="small" variant="contained" className="items-end">
+                        <Link to="/missions/newMission" className="hover:text-white p-1">
+                            <PlaylistAddIcon /> הוספת משימה
+                        </Link>
+                    </Button>
+                </div>
             </div>
             <TableContainer component={Paper} className="drop-shadow-xl overflow-scroll md:h-[67vh] h-[80vh]">
-                <Table className="border-collapse border border-slate-400">
+                <Table className="border-collapse border-2 border-slate-500">
                     <TableHead>
                         <TableRow className="colors2">
                             <TableCell className="border border-slate-300 text-white text-center">#</TableCell>

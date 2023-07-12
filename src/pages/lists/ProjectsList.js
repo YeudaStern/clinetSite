@@ -108,7 +108,7 @@ export default function ProjectsList() {
           </Button>
         </div>
       </div>
-      <TableContainer component={Paper} className="drop-shadow-xl border-2 border-slate-500 mb-2 rounded-b-lg overflow-scroll xl:h-[66vh] 2xl:h-[80vh] overflow-x-hidden">
+      <TableContainer component={Paper} className="drop-shadow-xl border-2 border-slate-500 mb-2 rounded-b-lg overflow-scroll md:h-[66vh] h-[80vh] overflow-x-hidden">
         <Table>
           <TableHead>
             <TableRow className=" colors2 ">
