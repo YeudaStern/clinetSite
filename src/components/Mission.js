@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import ReactApexChart from 'react-apexcharts';
 import { API_URL } from '../constant/url'
 import { apiGet } from '../services/apiServices';
-import FiberManualRecordOutlinedIcon from '@mui/icons-material/FiberManualRecordOutlined';
-import './widget/widget.css'
+import InventoryOutlinedIcon from '@mui/icons-material/InventoryOutlined';
+import InsertChartOutlinedOutlinedIcon from '@mui/icons-material/InsertChartOutlinedOutlined';
 
 export default function Mission() {
     const nav = useNavigate();
@@ -155,39 +155,36 @@ export default function Mission() {
     return (
         <div className='mission cheat mr-[20px] md:flex block  justify-between h-[54vh] 2xl:h-[66vh] overflow-y-auto md:overflow-hidden w-full md:w-2/3 mb-4 bg-stone-800 text-white rounded-lg'>
             <div className='md:w-1/2 w-full md:border-l'>
-                <div className='w-full h-5/6 overflow-y-auto'>
-                    {data.length === 0 ? <h2 className='w-full sticky-top overflow-hidden text-2xl bg-zinc-700 p-2 border-b border-b-slate-400 rounded-tr-lg'>אין משימות</h2> :
+                <div className='w-full h-full overflow-y-auto'>
+                    {data.length === 0 ? <h2 className='w-full sticky-top overflow-hidden text-2xl bg-zinc-700 p-2 border-b border-b-slate-400 rounded-tr-lg text-cyan-400'><InventoryOutlinedIcon /> אין משימות</h2> :
                         <>
-                            <h2 className='w-full overflow-hidden text-2xl p-2 border-b border-b-slate-400 rounded-tr-lg bg-stone-800 sticky top-0'>משימות</h2>
-                            {data.map((mission) => (
-                                <p
-                                    className='w-full h-[56px] text-right pr-3 cursor-pointer hover:bg-zinc-700 text-lg p-1 justify-between flex border-b border-b-slate-400'
-                                    onClick={() => nav(`/missions/missionUser/${mission.id}`)}
-                                >
-                                    <span className='pt-2'>  <FiberManualRecordOutlinedIcon /> {mission.title} -</span>
-                                    {mission.execution_status === 'waiting' ? (
-                                        <span className="border-orange-400 border-1 text-white px-2 mr-2 rounded-lg md:ml-2 m-2">
-                                            ממתין
-                                        </span>
-                                    ) : (
-                                        <span className="border-green-500 border-1 text-white px-2 mr-2 rounded-lg md:ml-2 m-2">
-                                            {mission.execution_status === 'done' ? 'בוצע' : ''}
-                                        </span>
-                                    )}
+                            <h2 className='w-full sticky top-0 overflow-hidden text-2xl p-2 border-b border-b-slate-400 rounded-tr-lg bg-stone-800 jus text-cyan-400'> <InventoryOutlinedIcon /> משימות</h2>
+                            {data.map((mission, index) => (
+                                <p key={mission._id || index} className='w-full h-[56px] text-right pr-3 cursor-pointer hover:bg-zinc-700 text-lg p-1  flex items-center justify-between border-b border-b-gray-500'>
+                                    <span className='mr-2 text-slate-200'>
+                                        {mission.title}
+                                    </span>
+                                    <span>
+                                        {mission.execution_status === 'waiting' ? (
+                                            <span className="text-orange-500 border px-3 ml-3 rounded-lg">
+                                                ממתין
+                                            </span>
+                                        ) : (
+                                            mission.execution_status === 'done' && (
+                                                <span className="text-green-500 border px-3 ml-3 rounded-lg">
+                                                    בוצע
+                                                </span>
+                                            )
+                                        )}
+                                    </span>
                                 </p>
                             ))}
-
                         </>
                     }
                 </div>
-                <div className='w-full h-1/6 p-2 justify-around flex items-center  bg-stone-800 overflow-hidden border-t border-t-slate-600 rounded-br-lg'>
-                    <button onClick={() => { nav('/users/newUser') }} className='w-1/4 h-10 md:h-full text-xs px-2 rounded-lg cheat1'>הוסף משתמש</button>
-                    <button onClick={() => { nav('/projects/newProject') }} className='w-1/4 h-10 md:h-full text-xs px-2 cheat1  rounded-lg '>הוסף פרויקט</button>
-                    <button onClick={() => { nav('/missions/newMission') }} className='w-1/4 h-10 md:h-full text-xs px-2 cheat1  rounded-lg '>הוסף משימה</button>
-                </div>
-            </div>
+            </div >
             <div className='md:w-1/2 w-full h-full pb-1'>
-                <h2 className='w-full text-2xl border-b border-b-slate-400 rounded-tl-lg p-2'>נתונים באתר</h2>
+                <h2 className='w-full text-2xl border-b border-b-slate-400 rounded-tl-lg p-2 text-cyan-500'><InsertChartOutlinedOutlinedIcon />נתונים</h2>
                 <ReactApexChart options={chartData} series={chartData.series} type={chartData.chart.type} width={chartData.chart.width} height={chartData.chart.height} />
             </div>
         </div>

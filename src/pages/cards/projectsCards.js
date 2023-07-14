@@ -66,7 +66,7 @@ export default function ProjectCard() {
   return (
 
     <div className="p-[10px] m-[10px]">
-      <div className='font-medium text-neutral-300 mb-0.5 border-2 p-[10px] flex justify-between login2 rounded-lg'>
+      <div className='font-medium text-neutral-300 mb-0.5 border-2 border-slate-500 p-[10px] flex justify-between login2 rounded-lg'>
         <span className="pt-2">רשימת דיירים בבנין </span>
         <Button size="small" variant="contained" className='items-end' >
           <Link to='/projects' className='hover:text-white p-1'>חזור < ArrowBackIcon /></Link>
@@ -78,7 +78,7 @@ export default function ProjectCard() {
       </Alert> </div> :
         <div className=" mh-[400px] flex flex-wrap pt-3 justify-between items-center">
           {data.map((item) => (
-            <Card key={item._id} className=" xs:w-[48%] sm:w-[47%] md:w-[32%] lg:w-[22%] colors2 text-white shadow-2xl sm:mb-0 mb-5 flex m-0.5 rounded-xl">
+            <Card key={item._id} className="w-full xs:w-[48%] sm:w-[47%] md:w-[32%] lg:w-[22%] colors2 text-white shadow-2xl sm:mb-0 mb-5 flex m-0.5 rounded-xl">
               <Card.Body>
                 <Card.Title className="text-end p-1 mb-1"><Person2OutlinedIcon className="text-green-600" /> {item.name}</Card.Title>
                 <Card.Text className="text-end p-1 mb-1"><AccountTreeIcon className="text-[goldenrod] bg-[#]" /> {item.p_name}</Card.Text>

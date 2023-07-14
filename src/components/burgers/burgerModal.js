@@ -13,7 +13,6 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { Clear, EngineeringRounded } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
-import { IconButton } from '@mui/material';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -21,38 +20,10 @@ import DashboardCustomizeRoundedIcon from '@mui/icons-material/DashboardCustomiz
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useTheme } from '@mui/private-theming';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { useStateContext } from '../../context';
 import ChecklistRtlIcon from '@mui/icons-material/ChecklistRtl';
 import logo2 from './../barside/logo2.png'
-
-const ColorModeContext = React.createContext({ toggleColorMode: () => { } });
-
-function MyApp() {
-  const theme = useTheme();
-  const colorMode = React.useContext(ColorModeContext);
-  return (
-    <Box
-      sx={{
-        display: 'flex',
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'center',
-        bgcolor: 'bg-slate-700',
-        color: 'text.white',
-        borderRadius: 1,
-        p: 3,
-      }}
-    >
-      {theme.palette.mode} mode
-      <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
-        {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-      </IconButton>
-    </Box>
-  );
-}
+import BarNav from '../navbar/BarNav';
 
 
 export default function BurgerModal() {
@@ -105,15 +76,15 @@ export default function BurgerModal() {
               </ListItem>
             ))}
             <ul className='px-2'>
-              <p className='title text-gray-300 mt-6 '>MAIN</p>
+              <p className='title text-cyan-400 mt-6  '>MAIN</p>
               <Link to='/'>
-                <li className='px-3 mb-12 cursor-pointer hover:text-yellow-500'><DashboardCustomizeRoundedIcon />
+                <li className='ps-3 mb-12 cursor-pointer hover:text-yellow-500'><DashboardCustomizeRoundedIcon />
                   <span className='mt-1 mx-2'>דף הבית</span>
                 </li>
               </Link>
-              <p className='title text-gray-300 mt-6'>LIST</p>
+              <p className='title  text-cyan-400 mt-6'>LIST</p>
               <Link to='/users'>
-                <li className='px-3 cursor-pointer hover:text-yellow-500'><PeopleAltIcon />
+                <li className='ps-3 cursor-pointer hover:text-yellow-500'><PeopleAltIcon />
                   <span className='mt-1 mx-2'>משתמשים</span>
                 </li>
               </Link>
@@ -132,7 +103,7 @@ export default function BurgerModal() {
                   <span className='mt-1 mx-2'>קבלנים</span>
                 </li>
               </Link>
-              <p className='title text-gray-300 mt-6'>SERVICE</p>
+              <p className='title  text-cyan-400 mt-6'>SERVICE</p>
               <li className='px-3 mt-3 cursor-pointer hover:text-yellow-500'><ConnectWithoutContactIcon />
                 <span className='mt-1 mx-2'>צור קשר</span>
               </li>
@@ -149,8 +120,7 @@ export default function BurgerModal() {
                   }}>יציאה</span>
                 </li>
               </Link>
-              <p className='title text-white mt-6'>DARK MODE</p>
-              <MyApp />
+            
             </ul>
           </List>
         </Box>
@@ -187,7 +157,7 @@ export default function BurgerModal() {
               </ListItem>
             ))}
             <ul className='px-2'>
-              <p className='title text-gray-300 mt-6 '>MAIN</p>
+              <p className='title text-cyan-400 mt-6  text-sm 2xl:text-lg'>MAIN</p>
               <Link to='/'>
                 <li className='px-3 mb-12 cursor-pointer hover:text-yellow-500'><DashboardCustomizeRoundedIcon />
                   <span className='mt-1 mx-2'>דף הבית</span>
@@ -213,8 +183,7 @@ export default function BurgerModal() {
                   }}>יציאה</span>
                 </li>
               </Link>
-              <p className='title text-white mt-6'>DARK MODE</p>
-              <MyApp />
+             
             </ul>
           </List>
         </Box>
@@ -231,7 +200,7 @@ export default function BurgerModal() {
               {['right'].map((anchor) => (
                 <React.Fragment key={anchor} >
                   <Button onClick={toggleDrawer(anchor, true)}>
-                    <MenuIcon fontSize='large' className='text-white' />
+                    <MenuIcon fontSize='large' className='text-white pt-1' />
                   </Button>
                   <Drawer
                     anchor={anchor}
@@ -246,6 +215,7 @@ export default function BurgerModal() {
             <Button>
               <img src={logo2} alt='person' className=' rounded-full w-10' />
             </Button>
+          
           </div>
         }
         {login === 3 &&
@@ -266,8 +236,8 @@ export default function BurgerModal() {
                 </React.Fragment>
               ))}
             </div>
-            <Button className='text-center'>
-              <img src='https://images.pexels.com/photos/936722/pexels-photo-936722.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='person' className=' rounded-full w-12' />
+            <Button>
+              <img src={logo2} alt='person' className=' rounded-full w-10' />
             </Button>
           </div>
         }

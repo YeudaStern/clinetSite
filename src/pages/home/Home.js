@@ -15,17 +15,17 @@ export default function Home() {
     <div>
       {login === 2 && <>
         <div className="widgets block md:flex me-10 pt-4">
-          <Widget type='projects' url='/projects/' text='פרוייקטים' />
-          <Widget type='users' url='/users/' text='דיירים' />
-          <Widget type='missions' url='/missions/' text='משימות' />
+          <Widget type='projects' url='/projects/' text='פרוייקטים' url2='/projects/newProject' />
+          <Widget type='users' url='/users/' text='דיירים' url2='/users/newUser' />
+          <Widget type='missions' url='/missions/' text='משימות' url2='/missions/newMission' />
         </div>
-        <div className="text-white  block md:flex me-10 pt-2">
+        <div className="text-white block md:flex me-10 pt-2">
           <Mission />
           <Cheat />
         </div>
       </>}
       {login === 3 &&
-        <div className="p-[10px] m-[10px]">
+        <div className="p-[20px] m-[20px]">
           <HomeUser />
         </div>
       }

@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import EngineeringOutlinedIcon from '@mui/icons-material/EngineeringOutlined';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import BusinessOutlinedIcon from '@mui/icons-material/BusinessOutlined';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import "./widget.scss"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '../../constant/url';
 import { apiGet } from '../../services/apiServices';
 
-export default function Widget({ type, url, text }) {
+export default function Widget({ type, url, text, url2 }) {
   let data;
-
+  const nav = useNavigate()
   //temporary
   const [amount, setAmount] = useState(0);
   const diff = 34;
@@ -20,7 +20,7 @@ export default function Widget({ type, url, text }) {
         title: type.toUpperCase(),
         link: <Link className='hover:text-yellow-500' to='users'>{text}</Link>,
         icon:
-          <PersonOutlineOutlinedIcon className='icon' style={{ color: "crimson", background: "rgba(220, 20, 60, 0.219)" }} />
+          <PersonOutlineOutlinedIcon className='icon' style={{ color: "crimson", background: "rgba(220, 20, 60, 0.219)" }} />,
       };
       break;
     case 'projects':
@@ -36,7 +36,7 @@ export default function Widget({ type, url, text }) {
         title: type.toUpperCase(),
         link: <Link className='hover:text-yellow-500' to='/missions'>{text}</Link>,
         icon:
-          <EngineeringOutlinedIcon className='icon' style={{ color: "rgb(2, 66, 2)", background: "rgba(0, 128, 0, 0.223)" }} />
+          <MailOutlineIcon className='icon' style={{ color: "rgb(2, 66, 4)", background: "rgba(0, 128, 0, 0.123)" }} />
       };
       break;
     default: break;
@@ -60,6 +60,14 @@ export default function Widget({ type, url, text }) {
           <span className='counter text-xl font-light'>{amount}</span>
           <span className='link text-xs border-b-[1px] border-b-[gray] w-max'>{data.link}</span>
         </div>
+        <button
+          onClick={() => { nav(url2) }}
+          className={`w-1/4 h-10 text-xs rounded-lg cheat1 mt-6 ${text === 'פרוייקטים' ? 'bg-[#957a3c]' :
+            text === 'דיירים' ? 'bg-[#502129]' : text === 'משימות' ? 'bg-[#143D12]' : ''
+            }`}
+        >
+          הוסף {text}
+        </button>
         <div className='right flex flex-col justify-between'>
           <div className='percentage positive flex items-center text-sm'>
             {diff}%

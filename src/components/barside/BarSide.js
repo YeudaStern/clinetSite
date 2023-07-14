@@ -6,68 +6,22 @@ import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { EngineeringRounded } from '@mui/icons-material';
-import { ThemeProvider, useTheme } from '@mui/private-theming';
-import { Box, createTheme } from '@mui/system';
-import { Button, IconButton } from '@mui/material';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
+import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useStateContext } from '../../context';
 import ChecklistRtlIcon from '@mui/icons-material/ChecklistRtl';
 import PermMediaRoundedIcon from '@mui/icons-material/PermMediaRounded';
 import logo2 from './logo2.png'
 
-const ColorModeContext = React.createContext({ toggleColorMode: () => { } });
-
-function MyApp() {
-  const theme = useTheme();
-  const colorMode = React.useContext(ColorModeContext);
-  return (
-    <Box
-      sx={{
-        display: 'flex',
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'center',
-        bgcolor: 'background.inherit',
-        color: 'text.white',
-        borderRadius: 1,
-        p: 1,
-      }}
-    >
-      <IconButton onClick={colorMode.toggleColorMode} color="inherit">
-        {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-      </IconButton>
-      {theme.palette.mode} mode
-    </Box>
-  );
-}
 
 export default function BarSide() {
   const { login } = useStateContext()
-  const [mode, setMode] = React.useState('light');
-  const colorMode = React.useMemo(
-    () => ({
-      toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
-      },
-    }),
-    [],
-  );
 
-  const theme = React.useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-        },
-      }),
-    [mode],
-  );
+
   return (
     <>
       {login === 2 &&
-        <div className='border-l-slate-600 border-l text-xs 2xl:text-base min-h-screen  fixed hidden md:block text-white w-[20%] login2'>
+        <div className='border-l-slate-600 border-l text-xs 2xl:text-base min-h-screen fixed hidden md:block text-white w-[20%] login2'>
           <div className=' text-center h-[70px] border-b border-b-slate-600 '>
             <Button>
               <img src={logo2} alt='person' className=' rounded-full w-14' />
@@ -141,7 +95,7 @@ export default function BarSide() {
       }
       {/* Customer */}
       {login === 3 &&
-        <div className='border-l-slate-600 border-l  min-h-screen fixed hidden md:block text-white w-[20%] login3'>
+        <div className='border-l-slate-600 border-l  min-h-screen fixed hidden md:block text-white w-[20%] login3 '>
           <div className=' text-center h-[70px] border-b border-b-slate-600'>
             <Button>
               <img src={logo2} alt='person' className=' rounded-full w-14' />

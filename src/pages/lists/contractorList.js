@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { Button, Paper, TableBody, TableCell, TableContainer, TableHead, TableRow, Table, Pagination, PaginationItem } from "@mui/material";
+import { Paper, TableBody, TableCell, TableContainer, TableHead, TableRow, Table, Pagination, PaginationItem } from "@mui/material";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+
 import { useStateContext } from "../../context";
 import '../single/scroll.css';
 

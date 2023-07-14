@@ -78,7 +78,7 @@ const BarNav = () => {
         
           <div className='navbar text-white hidden md:flex h-[70px] login2 pr-6 sticky top-0 border-b border-slate-600'   // Set the desired z-index value
         >
-            ברוך הבא - {data.name}
+            ברוך הבא {data.name}
             <div className='ml-4 cursor-pointer  p-1 rounded-full '>
               <Space size='large'>
                 <Badge count={totalCount}>
@@ -94,7 +94,7 @@ const BarNav = () => {
       )}
       {login === 3 && (
         <div className='navbar  border-b border-b-slate-600 text-stone-300 hidden md:flex h-[70px] login3 pr-6 sticky-top'>
-          ברוך הבא - {data.name}
+          ברוך הבא {data.name}
         </div>
       )}
       <Modal

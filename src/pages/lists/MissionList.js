@@ -115,6 +115,7 @@ export default function MissionList() {
                             <TableCell className="border border-slate-300 text-white text-center">דחיפות לביצוע</TableCell>
                             <TableCell className="border border-slate-300 text-white text-center">עריכה</TableCell>
                             <TableCell className="border border-slate-300 text-white text-center">מחיקה</TableCell>
+                            <TableCell className="border border-slate-300 text-white text-center"> דד-ליין לביצוע</TableCell>
                             <TableCell className="border border-slate-300 text-white text-center">תאריך התווספות</TableCell>
                         </TableRow>
                     </TableHead>
@@ -167,6 +168,9 @@ export default function MissionList() {
                                     <Button className="border border-red-600 rounded-xl" onClick={() => { handleDelete(row._id, row.title) }}>
                                         <DeleteIcon className="text-red-700" />
                                     </Button>
+                                </TableCell>
+                                <TableCell align="center" className="border border-slate-300">
+                                    {row.date_line ? row.date_line.split('-').reverse().join('-') : ''}
                                 </TableCell>
                                 <TableCell align="center" className="border border-slate-300 ">{row.date_created.substring(5, 10) + '-' + row.date_created.substring(0, 4)}</TableCell>
                             </TableRow>

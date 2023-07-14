@@ -22,7 +22,7 @@ export default function UsersList() {
   const [query] = useSearchParams();
 
   const page = parseInt(query.get('page')) || 1;
-  const itemsPerPage = 7;
+  const itemsPerPage = 12;
   const totalItems = data.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const startIndex = (page - 1) * itemsPerPage;
@@ -143,7 +143,7 @@ export default function UsersList() {
           </Button>
         </div>
       </div>
-      <TableContainer component={Paper} className='drop-shadow-xl xl:h-[66vh] 2xl:h-[80vh] overflow-scroll'>
+      <TableContainer component={Paper} className='drop-shadow-xl md:h-[66vh] h-[80vh] 2xl:h-[80vh] overflow-scroll'>
         <Table className='border-collapse border-2 border-slate-500 rounded-b-lg'>
           <TableHead>
             <TableRow className='colors2'>
@@ -159,7 +159,7 @@ export default function UsersList() {
               <TableCell className='border border-slate-300 text-white text-center'>דירה</TableCell>
               <TableCell className='border border-slate-300 text-white text-center'>גישה</TableCell>
               <TableCell className='border border-slate-300 text-white text-center'>עריכה</TableCell>
-              <TableCell className='border border-slate-300 text-center'>מחיקה</TableCell>
+              <TableCell className='border border-slate-300 text-white text-center'>מחיקה</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

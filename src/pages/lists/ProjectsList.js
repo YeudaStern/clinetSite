@@ -18,7 +18,7 @@ export default function ProjectsList() {
   const { setSProject } = useStateContext();
   const nav = useNavigate();
   const page = parseInt(query.get("page")) || 1;
-  const itemsPerPage = 7;
+  const itemsPerPage = 12;
   const totalItems = data.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const startIndex = (page - 1) * itemsPerPage;
@@ -108,7 +108,7 @@ export default function ProjectsList() {
           </Button>
         </div>
       </div>
-      <TableContainer component={Paper} className="drop-shadow-xl border-2 border-slate-500 mb-2 rounded-b-lg overflow-scroll md:h-[66vh] h-[80vh] overflow-x-hidden">
+      <TableContainer component={Paper} className="drop-shadow-xl border-2 border-slate-500 mb-2 rounded-b-lg overflow-scroll md:h-[66vh] h-[80vh] 2xl:h-[80vh] overflow-x-hidden">
         <Table>
           <TableHead>
             <TableRow className=" colors2 ">
